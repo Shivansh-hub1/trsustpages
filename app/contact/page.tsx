@@ -150,7 +150,7 @@ export default function ContactPage() {
                 <li>2. Free 30-minute call to understand goals and constraints.</li>
                 <li>3. Written scope, fixed price and timeline within two working days.</li>
               </ol>
-              <p className="mt-4 text-[0.78rem] text-white/60">
+              <p className="mt-4 text-[0.78rem] text-white/80">
                 No obligation. If we are not the right fit we will say so and point you elsewhere.
               </p>
             </div>

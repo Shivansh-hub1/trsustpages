@@ -230,7 +230,7 @@ export function CTABand({
                 <Icon name="phone" size={16} /> {SITE.phoneDisplay}
               </a>
             </div>
-            <p className="mt-5 text-[0.78rem] text-white/55">
+            <p className="mt-5 text-[0.78rem] text-white/75">
               Reply {SITE.responseWindow} · No lock-in contracts · You own everything we build
             </p>
           </div>

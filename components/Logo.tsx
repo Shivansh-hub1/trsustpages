@@ -25,7 +25,7 @@ export function Logo({ variant = "dark", compact = false }: { variant?: "dark" |
           </span>
           <span
             className="mt-0.5 text-[0.55rem] font-medium uppercase tracking-[0.22em]"
-            style={{ color: variant === "light" ? "rgba(255,255,255,0.7)" : "#7b7aba" }}
+            style={{ color: variant === "light" ? "rgba(255,255,255,0.7)" : "#54528c" }}
           >
             Web · Growth · AI Search
           </span>
@@ -37,7 +37,7 @@ export function Logo({ variant = "dark", compact = false }: { variant?: "dark" |
 
 export function LogoLink({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
-    <Link href="/" aria-label="Trustpages — home" className="inline-flex shrink-0 items-center">
+    <Link href="/" className="inline-flex shrink-0 items-center">
       <Logo variant={variant} />
     </Link>
   );

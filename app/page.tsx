@@ -292,9 +292,9 @@ export default function HomePage() {
           <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((p, i) => (
               <li key={p.step} className="relative rounded-[24px] border border-white/12 bg-white/[0.06] p-6 backdrop-blur">
-                <span className="font-display text-[2.4rem] font-semibold leading-none text-white/18">{p.step}</span>
+                <span className="font-display text-[2.4rem] font-semibold leading-none text-white/60">{p.step}</span>
                 <h3 className="mt-3 font-display text-[1.05rem] font-semibold text-white">{p.title}</h3>
-                <p className="mt-2 text-[0.87rem] leading-relaxed text-white/65">{p.body}</p>
+                <p className="mt-2 text-[0.87rem] leading-relaxed text-white/80">{p.body}</p>
                 {i < PROCESS.length - 1 && (
                   <span className="absolute -right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-plum text-white lg:grid" aria-hidden="true">
                     <Icon name="arrow" size={12} />

@@ -18,18 +18,18 @@ const INDUSTRIES = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-white/72">
+    <footer className="bg-navy-950 text-white/75">
       <div className="shell py-16">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr_1fr_1.1fr]">
           {/* Brand + NAP */}
           <div>
             <Logo variant="light" />
-            <p className="mt-5 max-w-sm text-[0.9rem] leading-relaxed text-white/65">
+            <p className="mt-5 max-w-sm text-[0.9rem] leading-relaxed text-white/70">
               A web design and digital growth studio in Bikapur, Ayodhya. We build fast, trustworthy
               websites — then make sure the right people find them in Google and in AI answers.
             </p>
 
-            <address className="mt-6 space-y-2.5 text-[0.86rem] not-italic text-white/70">
+            <address className="mt-6 space-y-2.5 text-[0.86rem] not-italic text-white/75">
               <p className="flex items-start gap-2.5">
                 <Icon name="pin" size={15} className="mt-0.5 shrink-0 text-plum-300" />
                 <span>
@@ -59,7 +59,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Trustpages on ${key}`}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/75 transition hover:border-plum-300 hover:text-plum-300"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/80 transition hover:border-plum-300 hover:text-plum-300"
                 >
                   <Icon name={key as IconName} size={15} />
                 </a>
@@ -69,7 +69,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat with Trustpages on WhatsApp"
-                className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/75 transition hover:border-plum-300 hover:text-plum-300"
+                className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-white/80 transition hover:border-plum-300 hover:text-plum-300"
               >
                 <Icon name="whatsapp" size={15} />
               </a>
@@ -124,7 +124,7 @@ export default function Footer() {
                   <Link href={`/locations/${l.slug}`} className="inline-flex items-center gap-1.5 hover:text-white">
                     <Icon name={l.kind === "local" ? "pin" : "globe"} size={13} className="text-plum-300" />
                     {l.city}
-                    <span className="text-white/40">{l.kind === "local" ? "· UP" : `· ${l.country}`}</span>
+                    <span className="text-white/70">{l.kind === "local" ? "· UP" : `· ${l.country}`}</span>
                   </Link>
                 </li>
               ))}
@@ -140,17 +140,17 @@ export default function Footer() {
 
         {/* Industry strip — useful for topical relevance and internal linking */}
         <div className="mt-14 border-t border-white/10 pt-8">
-          <h2 className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/50">
+          <h2 className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/75">
             Industries we build for
           </h2>
-          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[0.8rem] text-white/55">
+          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[0.8rem] text-white/70">
             {INDUSTRIES.map((i) => (
               <li key={i}>{i}</li>
             ))}
           </ul>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[0.78rem] text-white/50 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[0.78rem] text-white/70 md:flex-row md:items-center md:justify-between">
           <p>
             © {SITE.legalName}. All rights reserved.
           </p>
