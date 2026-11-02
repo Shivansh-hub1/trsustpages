@@ -30,6 +30,11 @@ const MAX_HITS = 6;
 
 function throttled(ip: string) {
   const now = Date.now();
+  // Remove stale entries so a long-lived instance cannot grow without bound.
+  if (hits.size > 1000) {
+    for (const [address, hit] of hits) if (now - hit.ts > WINDOW_MS) hits.delete(address);
+    if (hits.size > 1000) hits.clear();
+  }
   const entry = hits.get(ip);
   if (!entry || now - entry.ts > WINDOW_MS) {
     hits.set(ip, { count: 1, ts: now });
@@ -61,7 +66,9 @@ export async function POST(request: Request) {
 
   let body: Body;
   try {
-    body = (await request.json()) as Body;
+    const parsed = await request.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error("Invalid body");
+    body = parsed as Body;
   } catch {
     return NextResponse.json({ ok: false, error: "bad_json" }, { status: 400 });
   }

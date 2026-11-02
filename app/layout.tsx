@@ -24,7 +24,8 @@ const poppins = localFont({
   ],
   variable: "--font-poppins",
   display: "swap",
-  preload: true,
+  // Avoid preloading all four body weights on every page.
+  preload: false,
   fallback: ["ui-sans-serif", "system-ui", "Segoe UI", "Arial"],
   adjustFontFallback: "Arial",
 });
