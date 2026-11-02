@@ -80,12 +80,12 @@ order by created_at desc;
 ```
 app/
   layout.tsx               root metadata, fonts, Organization + LocalBusiness + WebSite schema
-  page.tsx                 homepage (hero, orbit, services, work, testimonials, FAQ, form)
+  page.tsx                 homepage (hero, services, project inspiration, FAQ, form)
   services/page.tsx        service index
   services/[slug]/page.tsx six service detail pages (Service + FAQ + Breadcrumb schema)
   locations/page.tsx       locations index
   locations/[slug]/page.tsx 7 city pages, local + global
-  work/page.tsx            portfolio + case studies
+  work/page.tsx            independently credited project inspiration
   about, blog, blog/[slug], contact, faq, privacy, terms
   api/enquiry/route.ts     lead capture → Supabase
   admin/                   private enquiry dashboard and actions
@@ -96,6 +96,7 @@ components/
 lib/
   site.ts                  ← ALL content, prices, cities, FAQs, blog posts live here
   schema.ts                schema.org graph builders
+  inspiration.ts           credited external examples (not Trustpages client work)
 public/
   fonts/                   self-hosted Outfit + Poppins (woff2)
   llms.txt                 machine-readable summary for AI assistants
@@ -110,10 +111,10 @@ docs/
 
 Almost everything is data, not markup. Open `lib/site.ts`:
 
-- `SITE` — name, phone, email, address, hours, socials, rating
+- `SITE` — name, phone, email, address, hours and socials
 - `SERVICES` — service pages (name, price, deliverables, outcomes, process, FAQs, keywords)
 - `LOCATIONS` — city pages (intro, local proof, focus, FAQs)
-- `FAQ_S` / `FAQS`, `TESTIMONIALS`, `PORTFOLIO`, `BLOG_POSTS`, `STATS`, `DIFFERENTIATORS`
+- `FAQ_S` / `FAQS`, `BLOG_POSTS`, `STATS`, `DIFFERENTIATORS`; external project inspiration is in `lib/inspiration.ts`
 
 Add a service or city and the routes, sitemap, schema, nav menu and footer update automatically.
 

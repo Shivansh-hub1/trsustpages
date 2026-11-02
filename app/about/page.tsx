@@ -8,7 +8,7 @@ import { breadcrumbSchema, graph, organizationSchema, abs } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "About Trustpages — a web studio in Bikapur, Ayodhya",
   description:
-    "A small web design and growth studio in Bikapur, Ayodhya. Since 2021 we have delivered 60+ websites for local businesses and international brands.",
+    "A web design and growth studio in Bikapur, Ayodhya, offering websites, development and SEO.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Trustpages — Bikapur, Ayodhya",
@@ -52,7 +52,7 @@ export default function AboutPage() {
       <JsonLd data={graph([organizationSchema(), breadcrumbSchema(trail)])} />
 
       <PageHero
-        eyebrow={`Est. ${SITE.foundingYear} · Bikapur, Ayodhya`}
+        eyebrow="Bikapur, Ayodhya"
         title="A small studio that takes"
         highlight="your numbers personally"
         intro={
@@ -70,7 +70,7 @@ export default function AboutPage() {
             Meet us on a call <Icon name="arrow" size={16} />
           </Link>
           <Link href="/work" className="btn btn-outline">
-            See our work
+            Explore project ideas
           </Link>
         </div>
       </PageHero>
@@ -85,16 +85,12 @@ export default function AboutPage() {
             </h2>
             <div className="mt-5 space-y-4 text-[0.96rem] leading-relaxed text-body">
               <p>
-                Trustpages began in {SITE.foundingYear} with a simple observation: in tier-2 and
-                tier-3 India, plenty of good businesses were paying for websites that made them look
-                smaller than they were. Slow pages, stock photos, no phone number above the fold —
-                and nobody to call when something broke.
+                Trustpages focuses on a simple idea: a website should make it easier for a business
+                to explain its offer and connect with the right customers.
               </p>
               <p>
-                We started with local shops and clinics in Bikapur and Ayodhya district. Word
-                travelled — a dentist told a coaching centre, a homestay owner told a handloom
-                exporter — and the work grew into eCommerce stores, dashboards and international
-                projects in the UAE, UK and US.
+                From service websites to online stores, we plan around the business goal first and
+                help clients choose the features that make sense for their needs.
               </p>
               <p>
                 The approach never changed. Understand what the business actually sells, write the
@@ -120,10 +116,8 @@ export default function AboutPage() {
               <h2 className="h-card">At a glance</h2>
               <dl className="mt-4 space-y-3 text-[0.88rem]">
                 {[
-                  ["Founded", String(SITE.foundingYear)],
                   ["Base", "Bikapur, Ayodhya, Uttar Pradesh"],
                   ["Team", "Small, senior, hands-on"],
-                  ["Clients served", "60+ projects"],
                   ["Languages", "English · Hindi"],
                   ["Working hours", SITE.hours],
                   ["Reply time", SITE.responseWindow],
@@ -171,7 +165,7 @@ export default function AboutPage() {
             eyebrow="How we behave"
             title="Four rules we do not"
             highlight="bend"
-            intro="These came from client complaints about other agencies. We wrote them down so we could be held to them."
+            intro="The principles that guide how we approach your project."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {VALUES.map((v) => (

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/Icons";
-import { HeroArtwork, HexBadges, OrbitDiagram, ProjectMock, Scribble } from "@/components/Artwork";
+import { HeroArtwork, HexBadges, OrbitDiagram, Scribble } from "@/components/Artwork";
 import Faq from "@/components/Faq";
 import LeadForm from "@/components/LeadForm";
 import { SectionHeading, SplitCTA, StatStrip, CheckList, CTABand, JsonLd, Pill } from "@/components/ui";
 import {
-  SITE, STATS, SERVICES, PROCESS, TESTIMONIALS, PORTFOLIO, FAQS, DIFFERENTIATORS, BLOG_POSTS, LOCATIONS,
+  SITE, STATS, SERVICES, PROCESS, FAQS, DIFFERENTIATORS, BLOG_POSTS, LOCATIONS,
 } from "@/lib/site";
-import { homeGraph, faqSchema, breadcrumbSchema, graph, reviewsSchema } from "@/lib/schema";
+import { INSPIRATION } from "@/lib/inspiration";
+import { homeGraph, faqSchema, breadcrumbSchema, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Web Design & SEO Agency in Bikapur, Ayodhya | Trustpages",
@@ -16,12 +17,6 @@ export const metadata: Metadata = {
     "Fast, trustworthy websites built in Bikapur, Ayodhya — designed to convert and optimised for Google, Maps and AI search. Fixed prices from ₹24,999.",
   alternates: { canonical: "/" },
 };
-
-const CLIENT_WORDS = [
-  "Awadh Handloom", "Mishra Dental Care", "Ayodhya Heritage Stays", "Verma Interiors",
-  "Saryu Agro Logistics", "Northline Studio", "Kaushal Coaching", "Ganpati Steel Works",
-  "Nirvana Yoga Studio", "Chandra Sweets", "Bharat Auto Spares", "Anand Physiotherapy",
-];
 
 const WHY_CARDS: { icon: IconName; title: string; body: string }[] = [
   {
@@ -63,7 +58,6 @@ export default function HomePage() {
       <JsonLd
         data={graph([
           breadcrumbSchema([{ name: "Home", path: "/" }]),
-          reviewsSchema(),
         ])}
         id="home-graph-extra"
       />
@@ -100,20 +94,7 @@ export default function HomePage() {
             <SplitCTA />
           </div>
 
-          <p className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[0.78rem] text-body">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="flex text-[#f5a623]" aria-hidden="true">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Icon key={i} name="star" size={13} />
-                ))}
-              </span>
-              <strong className="font-semibold text-navy">5.0</strong> on Google
-            </span>
-            <span aria-hidden="true" className="text-line">|</span>
-            <span>60+ projects delivered</span>
-            <span aria-hidden="true" className="text-line">|</span>
-            <span>Fixed price, agreed in writing</span>
-          </p>
+          <p className="mt-5 text-[0.78rem] text-body">Fixed scope and price, agreed in writing · You own your website and accounts</p>
 
           <div className="mt-10">
             <HexBadges />
@@ -153,7 +134,7 @@ export default function HomePage() {
                 Explore our services <Icon name="arrow" size={16} />
               </Link>
               <Link href="/work" className="btn btn-outline">
-                See the work
+                Explore project ideas
               </Link>
             </div>
           </div>
@@ -166,25 +147,6 @@ export default function HomePage() {
       <section className="border-y border-line bg-mist/60 py-12">
         <div className="shell">
           <StatStrip stats={STATS} />
-        </div>
-      </section>
-
-      {/* ==================== CLIENT MARQUEE ==================== */}
-      <section className="overflow-hidden border-b border-line bg-white py-10">
-        <p className="shell text-center text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-body">
-          Trusted by shops, clinics, studios and brands
-        </p>
-        <div className="relative mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_12%,#000_88%,transparent)]">
-          <div className="flex w-max animate-marquee items-center gap-10">
-            {[...CLIENT_WORDS, ...CLIENT_WORDS].map((c, i) => (
-              <span
-                key={`${c}-${i}`}
-                className="whitespace-nowrap font-display text-[1.05rem] font-medium tracking-tight text-navy/35"
-              >
-                {c}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -386,75 +348,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== PORTFOLIO ==================== */}
+      {/* Independent examples, not a portfolio of Trustpages client work. */}
       <section className="section bg-mist/50">
         <div className="shell">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="Selected work"
-              title="Turning strategy into"
-              highlight="measurable results"
-              intro="A snapshot of recent builds. Numbers are from client analytics, rounded conservatively."
-            />
-            <Link href="/work" className="btn btn-outline">
-              Full portfolio <Icon name="arrow" size={15} />
-            </Link>
+            <SectionHeading eyebrow="Project inspiration" title="Ideas for a website that" highlight="works for your business" intro="Explore examples from independent agencies. These projects were not created by Trustpages." />
+            <Link href="/work" className="btn btn-outline">Explore the examples <Icon name="arrow" size={15} /></Link>
           </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {PORTFOLIO.slice(0, 6).map((p) => (
-              <Link
-                key={p.title}
-                href={p.href}
-                className="group overflow-hidden rounded-[24px] border border-line bg-white transition hover:-translate-y-1 hover:shadow-lift"
-              >
-                <ProjectMock tone={p.tone} label={p.sector.split(" · ")[0]} />
-                <div className="p-5">
-                  <p className="text-[0.72rem] font-medium uppercase tracking-wider text-body">{p.sector}</p>
-                  <h3 className="mt-1.5 font-display text-[1.05rem] font-semibold text-navy">{p.title}</h3>
-                  <p className="mt-1 text-[0.85rem] text-body">{p.detail}</p>
-                  <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-lilac/70 px-3 py-1 text-[0.76rem] font-semibold text-plum">
-                    <Icon name="chart" size={13} /> {p.result}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== TESTIMONIALS ==================== */}
-      <section id="testimonials" className="section">
-        <div className="shell">
-          <SectionHeading
-            align="center"
-            eyebrow="Client words"
-            title="What clients say about the"
-            highlight="process — and the numbers"
-            intro="Boringly specific feedback, which is the only kind worth quoting."
-          />
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {TESTIMONIALS.map((t) => (
-              <figure key={t.name} className="card relative p-6">
-                <Icon name="quote" size={26} className="text-plum/20" />
-                <blockquote className="mt-3 text-[0.95rem] leading-relaxed text-navy/85">
-                  “{t.quote}”
-                </blockquote>
-                <figcaption className="mt-5 flex items-center gap-3 border-t border-line pt-4">
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-grad font-display text-[0.85rem] font-semibold text-white">
-                    {t.name.split(" ").map((n) => n[0]).slice(0, 2).join("")}
-                  </span>
-                  <span>
-                    <span className="block font-display text-[0.88rem] font-semibold text-navy">{t.name}</span>
-                    <span className="block text-[0.76rem] text-body">{t.role} · {t.place}</span>
-                  </span>
-                  <span className="ml-auto flex text-[#f5a623]" aria-label="5 out of 5">
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <Icon key={i} name="star" size={12} />
-                    ))}
-                  </span>
-                </figcaption>
-              </figure>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {INSPIRATION.map((item) => (
+              <article key={item.title} className="card flex flex-col p-6">
+                <p className="text-xs font-semibold uppercase tracking-wider text-plum">{item.sector} · External example</p>
+                <h3 className="h-card mt-3">{item.title}</h3>
+                <p className="mt-2 text-sm font-medium text-plum">Project by {item.agency}</p>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-body">{item.summary}</p>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-plum underline underline-offset-4">Original case study <Icon name="arrow" size={14} /><span className="sr-only"> (opens in a new tab)</span></a>
+              </article>
             ))}
           </div>
         </div>

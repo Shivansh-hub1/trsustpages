@@ -17,7 +17,6 @@ export function organizationSchema() {
     image: abs(SITE.ogImage),
     description: SITE.shortDesc,
     slogan: SITE.tagline,
-    foundingDate: String(SITE.foundingYear),
     email: SITE.email,
     telephone: SITE.phone,
     sameAs: Object.values(SITE.social),
@@ -97,13 +96,6 @@ export function localBusinessSchema() {
         closes: "19:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: SITE.reviews.ratingValue,
-      reviewCount: SITE.reviews.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
     parentOrganization: { "@id": ORG_ID },
     sameAs: Object.values(SITE.social),
   };
@@ -232,20 +224,6 @@ export function howToSchema() {
         text: "Monthly work on rankings, content, page speed and conversion experiments, reported in plain language.",
       },
     ],
-  };
-}
-
-export function reviewsSchema() {
-  return {
-    "@type": "ProfessionalService",
-    "@id": `${abs("/")}#reviews`,
-    name: SITE.name,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: SITE.reviews.ratingValue,
-      reviewCount: SITE.reviews.reviewCount,
-      bestRating: 5,
-    },
   };
 }
 

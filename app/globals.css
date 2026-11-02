@@ -325,3 +325,9 @@ p { text-wrap: pretty; }
     font-size: 0.66rem;
   }
 }
+
+/* Keep the mobile contact bar from covering footer content or the on-screen keyboard. */
+@media (max-width: 767px) {
+  body { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+  body:has(input:focus, textarea:focus, select:focus) .mobile-contact-bar { display: none; }
+}

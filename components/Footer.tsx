@@ -104,7 +104,7 @@ export default function Footer() {
             </h2>
             <ul className="mt-4 space-y-2.5 text-[0.88rem]">
               <li><Link href="/about" className="hover:text-white">About us</Link></li>
-              <li><Link href="/work" className="hover:text-white">Our work</Link></li>
+              <li><Link href="/work" className="hover:text-white">Project inspiration</Link></li>
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
@@ -152,7 +152,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[0.78rem] text-white/50 md:flex-row md:items-center md:justify-between">
           <p>
-            © {SITE.foundingYear}–2026 {SITE.legalName}. All rights reserved.
+            © {SITE.legalName}. All rights reserved.
           </p>
           <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>GSTIN available on invoice</span>
