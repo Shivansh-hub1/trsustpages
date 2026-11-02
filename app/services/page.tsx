@@ -46,7 +46,7 @@ export default function ServicesPage() {
             Book a free 30-min call <Icon name="arrow" size={16} />
           </Link>
           <Link href="/work" className="btn btn-outline">
-            See results first
+            Explore project ideas
           </Link>
         </div>
       </PageHero>

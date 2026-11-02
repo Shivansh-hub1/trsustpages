@@ -40,7 +40,7 @@ Site: `https://devshivansh.in` · Language: `en-IN` · Market: Bikapur / Ayodhya
 Emitted site-wide from `app/layout.tsx`:
 - `Organization` (`@id: /#organization`) — name, logo, sameAs, address, contactPoint, knowsAbout
 - `LocalBusiness` + `ProfessionalService` (`@id: /#localbusiness`) — NAP, `geo`, `hasMap`,
-  `openingHoursSpecification`, `areaServed` (all 7 cities + India), `aggregateRating`
+  `openingHoursSpecification`, `areaServed` (all 7 cities + India)
 - `WebSite` (`@id: /#website`) — with `SearchAction`
 
 Per template:
@@ -61,8 +61,7 @@ Validate after deploy:
 - https://search.google.com/test/rich-results
 - https://validator.schema.org/
 
-> Note: `aggregateRating` currently states 5.0 from 27 reviews. Keep it aligned with your real
-> Google Business Profile once live — inflated numbers risk a manual action.
+> No review rating is included until independent evidence is available.
 
 ---
 
@@ -152,14 +151,12 @@ one instead.
 
 ## 7. Known gaps to close (honest list)
 
-- **Reviews** — the schema declares 5.0/27. Replace with real, verifiable Google figures as soon
-  as the profile exists; consider removing `aggregateRating` until then to stay safe.
+- **Reviews** — add ratings and testimonials only after verifying them and obtaining permission.
 - **Backlinks** — nothing earns links yet. Priorities: Justdial/Sulekha/IndiaMART listings,
   local news/press in Ayodhya, a genuine free “Bikapur business website teardown” post,
   chamber-of-commerce and UP startup directory listings, supplier/partner pages.
 - **Hindi** — service pages are English only. `hi-IN` versions of the 3 location pages would
   capture significant local intent; the layout already supports `alternates.languages`.
-- **Case-study evidence** — portfolio figures are illustrative and labelled as such on `/work`.
-  Replace with client-approved numbers when available; keep the disclaimer until then.
+- **Case-study evidence** — `/work` links to clearly credited external inspiration. Add Trustpages projects only with verified evidence and client permission.
 - **Images** — none yet by design. If real photos are added, use `next/image` with
   AVIF/WebP and explicit width/height to protect LCP and CLS.

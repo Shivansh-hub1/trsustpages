@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileContactBar from "@/components/MobileContactBar";
 import { SITE } from "@/lib/site";
 import { graph, organizationSchema, localBusinessSchema, websiteSchema } from "@/lib/schema";
 
@@ -24,7 +25,8 @@ const poppins = localFont({
   ],
   variable: "--font-poppins",
   display: "swap",
-  preload: true,
+  // Avoid preloading all four body weights on every page.
+  preload: false,
   fallback: ["ui-sans-serif", "system-ui", "Segoe UI", "Arial"],
   adjustFontFallback: "Arial",
 });
@@ -129,6 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <MobileContactBar />
         <script
           type="application/ld+json"
           suppressHydrationWarning

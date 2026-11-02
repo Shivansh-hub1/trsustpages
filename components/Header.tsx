@@ -14,15 +14,14 @@ type MenuItem = {
 };
 
 const WORK: MenuItem[] = [
-  { label: "Our work", href: "/work", desc: "Selected builds and redesigns", icon: "layout" },
-  { label: "Case studies", href: "/work#case-studies", desc: "Before, after and the numbers", icon: "chart" },
-  { label: "Reviews", href: "/work#testimonials", desc: "What clients say in their words", icon: "star" },
+  { label: "Project ideas", href: "/work", desc: "Examples from independent agencies", icon: "layout" },
+  { label: "External examples", href: "/work#case-studies", desc: "Credited sources and inspiration", icon: "chart" },
   { label: "Blog", href: "/blog", desc: "SEO, AEO and build notes", icon: "doc" },
   { label: "About us", href: "/about", desc: "Who we are and how we work", icon: "users" },
 ];
 
 const MAIN = [
-  { label: "Work", href: "/work", children: WORK },
+  { label: "Ideas", href: "/work", children: WORK },
   {
     label: "Services",
     href: "/services",

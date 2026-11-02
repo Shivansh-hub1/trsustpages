@@ -59,11 +59,11 @@ export default function ContactPage() {
       <section className="section">
         <div className="shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           {/* Form */}
-          <div className="card p-6 md:p-8">
+          <div id="project-enquiry" className="card p-6 md:p-8">
             <h2 className="h-card">Project enquiry</h2>
             <p className="mt-1.5 text-[0.85rem] text-body">
-              Fields marked * are required. Your details are used only to reply — never sold,
-              never added to a mailing list.
+              Fields marked * are required. Tell us your goals and preferred timeline; we’ll reply
+              within 12 business hours. Your details are only used to respond.
             </p>
             <div className="mt-6">
               <LeadForm compact={false} />

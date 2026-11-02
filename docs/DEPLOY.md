@@ -12,8 +12,10 @@ npx vercel login                 # opens browser, authorise
 npx vercel link                  # create/link project "trustpages"
 npx vercel env add SUPABASE_URL production
 npx vercel env add SUPABASE_SERVICE_ROLE_KEY production
+npx vercel env add ADMIN_EMAIL production
 npx vercel env add SUPABASE_URL preview
 npx vercel env add SUPABASE_SERVICE_ROLE_KEY preview
+npx vercel env add ADMIN_EMAIL preview
 npx vercel --prod                # build + deploy
 npx vercel domains add devshivansh.in
 npx vercel domains add www.devshivansh.in
@@ -108,3 +110,12 @@ npm install
 cp .env.example .env.local   # paste the same two values
 npm run dev
 ```
+
+## Admin setup
+
+Create a confirmed email/password user in Supabase Authentication, then set `ADMIN_EMAIL` to
+that account’s email in Vercel (production and/or preview). Redeploy after adding environment
+variables. Go to `/admin` and sign in with that user’s credentials. Only the configured email
+is allowed. Sessions expire after at most one hour and the dashboard shows the latest 100 leads.
+The panel remains inaccessible if its server configuration is incomplete. Do not expose the
+service-role key in browser code or a `NEXT_PUBLIC_` variable.

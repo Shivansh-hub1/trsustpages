@@ -12,7 +12,6 @@ export const SITE = {
   url: "https://devshivansh.in",
   locale: "en_IN",
   lang: "en-IN",
-  foundingYear: 2021,
   priceRange: "₹₹",
   phone: "+918303172373",
   phoneDisplay: "+91 83031 72373",
@@ -35,18 +34,14 @@ export const SITE = {
   social: {
     instagram: "https://www.instagram.com/trust_pages",
   },
-  reviews: {
-    ratingValue: 5,
-    reviewCount: 27,
-    source: "Google Business Profile",
-  },
+
 } as const;
 
 export const STATS = [
-  { value: "60+", label: "Projects delivered", note: "Websites, stores, dashboards" },
-  { value: "4+", label: "Years of hands-on craft", note: "Since 2021" },
-  { value: "18", label: "Industries served", note: "Local retail to global SaaS" },
-  { value: "< 12 hrs", label: "Reply time", note: "Mon–Sat, IST" },
+  { value: "Clear", label: "Written scope", note: "Agreed before work begins" },
+  { value: "Mobile", label: "First approach", note: "Designed for smaller screens" },
+  { value: "Yours", label: "Your assets", note: "Domain, code and accounts" },
+  { value: "< 12 hrs", label: "Target reply time", note: "Mon–Sat, IST" },
 ];
 
 export type Service = {
@@ -463,7 +458,7 @@ export const LOCATIONS: LocationPage[] = [
       },
       {
         q: "Do you work with shops that have no online presence yet?",
-        a: "That is most of our local work. We start with a Google Business Profile, a one-page site and WhatsApp ordering, then expand once enquiries arrive.",
+        a: "We can start with a Google Business Profile, a one-page site and WhatsApp enquiry flow, then expand as your needs grow.",
       },
     ],
   },
@@ -490,7 +485,7 @@ export const LOCATIONS: LocationPage[] = [
       },
       {
         q: "Can you rank a business for 'near me' searches in Ayodhya?",
-        a: "Yes. We optimise your Google Business Profile, service areas, reviews and location pages together, which is what map-pack rankings actually depend on.",
+        a: "We can improve your Google Business Profile, service areas and location pages, but no agency can guarantee a specific search ranking.",
       },
       {
         q: "Do you handle Hindi content?",
@@ -505,7 +500,7 @@ export const LOCATIONS: LocationPage[] = [
     country: "India",
     kind: "local",
     intro:
-      "Faizabad is 20 minutes from our desk. We work with clinics, coaching centres, contractors and retailers who need a credible website and a Google profile that actually ranks.",
+      "We offer website design and local SEO for clinics, coaching centres, contractors and retailers in Faizabad.",
     localProof: [
       "Healthcare and education content compliance",
       "Lead forms tuned for phone-first buyers",
@@ -675,88 +670,6 @@ export const PROCESS = [
     step: "04",
     title: "Grow & report",
     body: "Monthly work on rankings, content, page speed and conversion experiments, reported in plain language with next month's priorities.",
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Our old site was a brochure nobody found. Trustpages rebuilt it around the questions our customers actually ask, and enquiries through the website went from rare to routine inside two months.",
-    name: "Rakesh Verma",
-    role: "Owner, Verma Interiors",
-    place: "Ayodhya, Uttar Pradesh",
-  },
-  {
-    quote:
-      "They explained SEO without jargon and pushed back when we asked for things that would not help. The monthly report is the only agency report I actually read.",
-    name: "Dr. Shalini Mishra",
-    role: "Founder, Mishra Dental Care",
-    place: "Faizabad, Uttar Pradesh",
-  },
-  {
-    quote:
-      "We came for a Shopify store and stayed for the growth work. Checkout is faster, product pages show up in search, and support is a WhatsApp message away.",
-    name: "Amit Chaudhary",
-    role: "Director, Awadh Handloom",
-    place: "Lucknow, Uttar Pradesh",
-  },
-  {
-    quote:
-      "Working across time zones was the worry. It turned out to be the least of our problems — clear specs, weekly previews, and a launch that landed on the date promised.",
-    name: "Daniel Okafor",
-    role: "Marketing Lead, Northline Studio",
-    place: "London, United Kingdom",
-  },
-];
-
-export const PORTFOLIO = [
-  {
-    title: "Awadh Handloom",
-    sector: "eCommerce · Lucknow",
-    result: "+184% online orders in 6 months",
-    detail: "Shopify storefront with UPI checkout and bilingual product pages.",
-    tone: "plum",
-    href: "/work#awadh-handloom",
-  },
-  {
-    title: "Mishra Dental Care",
-    sector: "Healthcare · Faizabad",
-    result: "3× appointment enquiries",
-    detail: "Appointment booking, local SEO and Google Business Profile overhaul.",
-    tone: "navy",
-    href: "/work#mishra-dental",
-  },
-  {
-    title: "Ayodhya Heritage Stays",
-    sector: "Hospitality · Ayodhya",
-    result: "41% direct bookings, fewer OTA fees",
-    detail: "Direct booking site with seasonal campaign pages.",
-    tone: "sky",
-    href: "/work#heritage-stays",
-  },
-  {
-    title: "Verma Interiors",
-    sector: "Interior Design · Ayodhya",
-    result: "6.4s → 1.8s load time",
-    detail: "Rebuilt gallery-heavy site into a fast Next.js portfolio.",
-    tone: "lilac",
-    href: "/work#verma-interiors",
-  },
-  {
-    title: "Northline Studio",
-    sector: "B2B Services · London",
-    result: "+62% qualified demo requests",
-    detail: "Positioning, landing pages and technical SEO for a UK consultancy.",
-    tone: "navy",
-    href: "/work#northline-studio",
-  },
-  {
-    title: "Saryu Agro Logistics",
-    sector: "Logistics · Uttar Pradesh",
-    result: "One dashboard, 3 systems replaced",
-    detail: "Custom shipment tracking portal and client dashboard.",
-    tone: "plum",
-    href: "/work#saryu-agro",
   },
 ];
 

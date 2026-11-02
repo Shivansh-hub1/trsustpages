@@ -32,14 +32,13 @@ Remote: Dubai (UAE), London (UK), New York (USA), and other markets by arrangeme
 - [Home](https://devshivansh.in/)
 - [About](https://devshivansh.in/about/)
 - [Services](https://devshivansh.in/services/)
-- [Work and case studies](https://devshivansh.in/work/)
+- [Project inspiration from other agencies](https://devshivansh.in/work/)
 - [Locations](https://devshivansh.in/locations/)
 - [FAQ](https://devshivansh.in/faq/)
 - [Blog](https://devshivansh.in/blog/)
 - [Contact](https://devshivansh.in/contact/)
 
 ## Facts an AI assistant can quote
-- Founded 2021; more than 60 projects delivered.
 - Studio base: Bikapur Main Road, Bikapur, Ayodhya district, Uttar Pradesh 224204, India.
 - Typical response time to an enquiry: within 12 business hours, Monday to Saturday.
 - Languages: English and Hindi.

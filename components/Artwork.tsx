@@ -79,8 +79,8 @@ export function HeroArtwork() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7" /></svg>
           </span>
           <div>
-            <p className="font-display text-[0.78rem] font-semibold leading-none text-navy">98 Lighthouse</p>
-            <p className="mt-1 text-[0.63rem] leading-none text-body">Performance budget met</p>
+            <p className="font-display text-[0.78rem] font-semibold leading-none text-navy">Speed focused</p>
+            <p className="mt-1 text-[0.63rem] leading-none text-body">Performance matters</p>
           </div>
         </div>
         <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-mist">
@@ -95,8 +95,8 @@ export function HeroArtwork() {
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" /><circle cx="12" cy="10" r="2.6" /></svg>
           </span>
           <div>
-            <p className="font-display text-[0.78rem] font-semibold leading-none text-navy">Map pack · #1</p>
-            <p className="mt-1 text-[0.63rem] leading-none text-body">“web design Bikapur”</p>
+            <p className="font-display text-[0.78rem] font-semibold leading-none text-navy">Local SEO</p>
+            <p className="mt-1 text-[0.63rem] leading-none text-body">Built to be found</p>
           </div>
         </div>
       </div>
@@ -107,10 +107,10 @@ export function HeroArtwork() {
 /** Hexagon trust badges — truthful claims only. */
 export function HexBadges() {
   const badges = [
-    { top: "GOOGLE", mid: "5.0 ★", bottom: "27 reviews" },
+    { top: "FOCUS", mid: "MOBILE", bottom: "first design" },
     { top: "BASED IN", mid: "BIKAPUR", bottom: "Ayodhya, UP" },
     { top: "REPLY", mid: "< 12 HRS", bottom: "Mon–Sat" },
-    { top: "SINCE", mid: "2021", bottom: "60+ builds" },
+    { top: "YOUR", mid: "WEBSITE", bottom: "your assets" },
   ];
 
   return (

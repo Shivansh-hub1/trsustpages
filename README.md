@@ -26,11 +26,23 @@ npm run build && npm start   # production build
 | Variable | Where | Purpose |
 |---|---|---|
 | `SUPABASE_URL` | Vercel → Settings → Environment Variables | e.g. `https://xxxx.supabase.co` |
-| `SUPABASE_SERVICE_ROLE_KEY` | Vercel → Settings → Environment Variables | server-only key for inserting enquiries |
+| `SUPABASE_SERVICE_ROLE_KEY` | Vercel → Settings → Environment Variables | server-only key for enquiries |
+| `ADMIN_EMAIL` | Vercel → Settings → Environment Variables | email of the confirmed Supabase Auth user allowed to access `/admin` |
 
 Neither variable is exposed to the browser. The form posts to `/api/enquiry`, which writes to
 `public.enquiries` with the service role key. Row-level security is enabled and **no** anon or
 authenticated policy exists, so the table is unreadable from the client — verified.
+
+### Admin panel
+
+Visit `/admin` to sign in and manage the latest 100 enquiries. The dashboard shows counts for
+that displayed set and allows statuses to be changed to new, contacted, qualified or closed.
+Create a confirmed email/password user in Supabase Authentication and set `ADMIN_EMAIL` to that
+user’s email in each Vercel environment where admin access is needed. Sign-in uses Supabase Auth;
+the access token is held in an HTTP-only cookie, verified server-side on each request, and expires
+after at most one hour. The service role key remains server-only. Missing configuration fails closed.
+Use a strong password and enable appropriate Supabase Auth rate limits; changing content still
+requires editing `lib/site.ts`.
 
 ### Database
 
@@ -68,14 +80,15 @@ order by created_at desc;
 ```
 app/
   layout.tsx               root metadata, fonts, Organization + LocalBusiness + WebSite schema
-  page.tsx                 homepage (hero, orbit, services, work, testimonials, FAQ, form)
+  page.tsx                 homepage (hero, services, project inspiration, FAQ, form)
   services/page.tsx        service index
   services/[slug]/page.tsx six service detail pages (Service + FAQ + Breadcrumb schema)
   locations/page.tsx       locations index
   locations/[slug]/page.tsx 7 city pages, local + global
-  work/page.tsx            portfolio + case studies
+  work/page.tsx            independently credited project inspiration
   about, blog, blog/[slug], contact, faq, privacy, terms
   api/enquiry/route.ts     lead capture → Supabase
+  admin/                   private enquiry dashboard and actions
   sitemap.ts robots.ts manifest.ts icon.svg not-found.tsx
 components/
   Header, Footer, ui (PageHero, CTABand, StatStrip, JsonLd…), Icons, Artwork,
@@ -83,6 +96,7 @@ components/
 lib/
   site.ts                  ← ALL content, prices, cities, FAQs, blog posts live here
   schema.ts                schema.org graph builders
+  inspiration.ts           credited external examples (not Trustpages client work)
 public/
   fonts/                   self-hosted Outfit + Poppins (woff2)
   llms.txt                 machine-readable summary for AI assistants
@@ -97,10 +111,10 @@ docs/
 
 Almost everything is data, not markup. Open `lib/site.ts`:
 
-- `SITE` — name, phone, email, address, hours, socials, rating
+- `SITE` — name, phone, email, address, hours and socials
 - `SERVICES` — service pages (name, price, deliverables, outcomes, process, FAQs, keywords)
 - `LOCATIONS` — city pages (intro, local proof, focus, FAQs)
-- `FAQ_S` / `FAQS`, `TESTIMONIALS`, `PORTFOLIO`, `BLOG_POSTS`, `STATS`, `DIFFERENTIATORS`
+- `FAQ_S` / `FAQS`, `BLOG_POSTS`, `STATS`, `DIFFERENTIATORS`; external project inspiration is in `lib/inspiration.ts`
 
 Add a service or city and the routes, sitemap, schema, nav menu and footer update automatically.
 
