@@ -12,9 +12,9 @@ import { INSPIRATION } from "@/lib/inspiration";
 import { homeGraph, faqSchema, breadcrumbSchema, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Web Design & SEO Agency in Bikapur, Ayodhya | Trustpages",
+  title: "Web Dev & Website Maker in Ayodhya | Trustpages",
   description:
-    "Fast, trustworthy websites built in Bikapur, Ayodhya — designed to convert and optimised for Google, Maps and AI search. Fixed prices from ₹24,999.",
+    "Leading website maker, web dev and SEO studio in Ayodhya & Bikapur. Fast websites that rank #1 on Google search, Maps & AI answers. Fixed pricing from ₹24,999.",
   alternates: { canonical: "/" },
 };
 
@@ -439,7 +439,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {BLOG_POSTS.map((post) => (
+            {BLOG_POSTS.slice(0, 3).map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}

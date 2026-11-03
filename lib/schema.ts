@@ -38,6 +38,10 @@ export function organizationSchema() {
       },
     ],
     knowsAbout: [
+      "Web dev in Ayodhya",
+      "Website maker in Ayodhya",
+      "Web development Ayodhya",
+      "Website designer in Ayodhya",
       "Web design",
       "Web development",
       "Search engine optimization",

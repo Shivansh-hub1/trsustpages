@@ -423,6 +423,10 @@ export type LocationPage = {
   region: string;
   country: string;
   kind: "local" | "global";
+  heroTitle?: string;
+  metaTitle?: string;
+  metaDesc?: string;
+  keywords?: string[];
   intro: string;
   localProof: string[];
   focus: string;
@@ -468,28 +472,53 @@ export const LOCATIONS: LocationPage[] = [
     region: "Uttar Pradesh",
     country: "India",
     kind: "local",
-    intro:
-      "Ayodhya's visitor economy moves fast and seasonally. We build sites for hotels, homestays, tour operators, restaurants and retail that need to be found in a hurry and trusted on a phone screen.",
-    localProof: [
-      "Tourism and hospitality conversion patterns",
-      "Multilingual content (Hindi, English, Awadhi tone)",
-      "Booking and WhatsApp enquiry flows",
-      "Seasonal campaign planning around festival footfall",
+    heroTitle: "Web Development & Website Maker in",
+    metaTitle: "Web Dev & Website Maker in Ayodhya | Top Website Developer",
+    metaDesc:
+      "Looking for top web dev or a trusted website maker in Ayodhya? Trustpages builds fast, mobile-friendly websites that rank on Google Maps & search. Starts at ₹24,999.",
+    keywords: [
+      "web dev in ayodhya",
+      "website maker in ayodhya",
+      "web development ayodhya",
+      "website developer in ayodhya",
+      "website designer in ayodhya",
+      "web development company ayodhya",
+      "best website maker in ayodhya",
+      "website design ayodhya faizabad",
+      "website banwane wale ayodhya",
     ],
-    focus: "Hospitality, tourism and retail websites plus local SEO for the Ayodhya–Faizabad belt.",
-    landmark: "Ayodhya–Faizabad highway corridor",
+    intro:
+      "Looking for professional web development or a reliable website maker in Ayodhya? Trustpages builds lightning-fast, conversion-focused websites for businesses, hotels, homestays, retail shops, coaching institutes and clinics across Ayodhya and Faizabad — optimised for Google search, Google Maps, and AI search results.",
+    localProof: [
+      "Full-stack custom web development with Next.js, React and modern SEO",
+      "Local website maker for hotels, tour operators, clinics, coaching and retail in Ayodhya",
+      "Google Business Profile & local map pack ranking integration",
+      "Bilingual websites in Hindi and English with instant WhatsApp inquiry flows",
+      "Face-to-face meetings across Ayodhya city, Faizabad and Bikapur corridor",
+    ],
+    focus:
+      "High-performance website development, custom web design, and local SEO for businesses looking for a trusted website maker in the Ayodhya–Faizabad region.",
+    landmark: "Ram Path / Highway Corridor, Ayodhya–Faizabad",
     faqs: [
       {
-        q: "Do you build hotel and homestay booking websites?",
-        a: "Yes — direct booking pages with availability enquiry, WhatsApp confirmation and OTA-friendly photography, so you rely less on commission platforms.",
+        q: "Who is the best website maker in Ayodhya?",
+        a: "Trustpages is a dedicated web design and development studio located in Ayodhya district (Bikapur). We specialize in custom, fast-loading websites built with modern tech (Next.js), with on-page SEO and WhatsApp lead flows included.",
       },
       {
-        q: "Can you rank a business for 'near me' searches in Ayodhya?",
-        a: "We can improve your Google Business Profile, service areas and location pages, but no agency can guarantee a specific search ranking.",
+        q: "How much does web development cost in Ayodhya?",
+        a: "A 5-page custom business website in Ayodhya starts at ₹24,999 with written scope, mobile responsiveness, fast hosting setup, and SEO markup. eCommerce and catalog websites start from ₹59,999.",
       },
       {
-        q: "Do you handle Hindi content?",
-        a: "Yes, we write and optimise Hindi and English content, including hreflang setup if you run both languages.",
+        q: "How can my Ayodhya website rank #1 on Google and Google Maps?",
+        a: "Ranking #1 in Ayodhya requires three pillars: a fast mobile website with schema markup, an active Google Business Profile with real customer reviews in Ayodhya, and dedicated location-targeted content matching local search queries.",
+      },
+      {
+        q: "Do you build websites for Ayodhya hotels, homestays, and tour operators?",
+        a: "Yes. We build direct booking and enquiry websites with room catalogs, photo galleries, map directions, and WhatsApp reservation buttons so you reduce dependency on high-commission aggregators.",
+      },
+      {
+        q: "How long does it take a website maker in Ayodhya to deliver a site?",
+        a: "Standard business websites are delivered in 7 to 14 days with full staging previews and revision rounds. Rush timelines are available upon request.",
       },
     ],
   },
@@ -720,6 +749,102 @@ export const DIFFERENTIATORS = [
 ];
 
 export const BLOG_POSTS = [
+  {
+    slug: "website-maker-in-ayodhya-guide",
+    title: "Best Website Maker in Ayodhya: 2026 Guide to Web Development",
+    excerpt:
+      "Short answer: If you need a website maker or web dev in Ayodhya, look for custom mobile-first code (Next.js/React), Google Maps pack integration, and direct WhatsApp lead capture — not rented templates.",
+    date: "2026-11-03",
+    author: "Shivansh Tripathi",
+    readingTime: "6 min read",
+    category: "Web Development",
+    body: [
+      {
+        type: "p",
+        text: "Ayodhya's local economy is booming across hospitality, travel, healthcare, education, retail, and manufacturing. When pilgrims, tourists, and local residents look for a service, they search 'website maker in ayodhya' or 'web dev in ayodhya' directly on their phones. If your business doesn't appear in the top 3 Google results and Google Maps, that customer goes straight to your competitor.",
+      },
+      {
+        type: "h2",
+        text: "What to look for in an Ayodhya website maker",
+      },
+      {
+        type: "p",
+        text: "Most cheap agencies in the region install generic WordPress themes on slow shared hosting. A proper web dev team builds lightweight, custom code using Next.js and React that loads in under 1.5 seconds on mobile 4G networks, includes structured schema markup, and gives you 100% ownership of your domain, code, and hosting.",
+      },
+      {
+        type: "h2",
+        text: "How much does website development cost in Ayodhya?",
+      },
+      {
+        type: "p",
+        text: "A high-converting 5-page custom website in Ayodhya typically starts at ₹24,999. Full eCommerce platforms with UPI/payment gateway integration start from ₹59,999. Beware of ₹3,000–₹5,000 templates: they are usually locked into third-party hosting where you never own your domain or data.",
+      },
+      {
+        type: "h2",
+        text: "How we rank Ayodhya websites on Google Maps and search",
+      },
+      {
+        type: "p",
+        text: "To rank #1 in Ayodhya, your website must have clean on-page SEO: localized title tags, structured LocalBusiness schema, lightning-fast mobile speeds, and consistent NAP (Name, Address, Phone) matching your Google Business Profile.",
+      },
+      {
+        type: "h2",
+        text: "Get started with Trustpages in Ayodhya",
+      },
+      {
+        type: "p",
+        text: "Trustpages is based right here in Ayodhya district (Bikapur). We offer in-person meetings, written fixed quotes, and websites delivered in 7 to 14 days. Call +91 83031 72373 or message us on WhatsApp for a free 30-minute consultation.",
+      },
+    ],
+  },
+  {
+    slug: "web-dev-in-ayodhya-local-seo-ranking",
+    title: "Web Dev in Ayodhya: How to Rank #1 on Google for Local Searches",
+    excerpt:
+      "Short answer: Ranking #1 for web searches in Ayodhya requires three things: lightning-fast mobile performance under 2 seconds, high-relevance localized content, and a verified Google Business Profile with active reviews.",
+    date: "2026-11-02",
+    author: "Shivansh Tripathi",
+    readingTime: "7 min read",
+    category: "SEO & Growth",
+    body: [
+      {
+        type: "p",
+        text: "Whether someone searches for 'web dev in ayodhya', 'website designer in ayodhya', or 'best hotel in ayodhya', Google evaluates three core criteria: relevance, distance, and prominence. To win top placement, your website must explicitly target local search intent.",
+      },
+      {
+        type: "h2",
+        text: "1. Optimize for Core Web Vitals on mobile",
+      },
+      {
+        type: "p",
+        text: "Over 85% of searches in Ayodhya happen on mobile Android devices over cellular networks. Google rewards pages with an LCP (Largest Contentful Paint) under 2.5 seconds and zero Cumulative Layout Shift (CLS). Clean semantic HTML and modern frameworks like Next.js give you a permanent speed advantage.",
+      },
+      {
+        type: "h2",
+        text: "2. Add LocalBusiness and City-Specific Schema Markup",
+      },
+      {
+        type: "p",
+        text: "Search engines and AI assistants (ChatGPT, Gemini, Perplexity) parse JSON-LD structured data to understand your exact geo-coordinates, operating hours, phone number, and service areas. Having valid schema on every page ensures Google displays rich snippets in search results.",
+      },
+      {
+        type: "h2",
+        text: "3. Build dedicated location and service pages",
+      },
+      {
+        type: "p",
+        text: "Do not bury all your services on a single generic page. Build individual pages for 'Web Design Ayodhya', 'eCommerce Website Maker Ayodhya', and 'Local SEO Faizabad'. Each page should answer customer questions within the first two sentences.",
+      },
+      {
+        type: "h2",
+        text: "4. Real review velocity beats backlink spam",
+      },
+      {
+        type: "p",
+        text: "Local ranking algorithms prioritize consistent, genuine reviews from local Google accounts in Uttar Pradesh. Implement a WhatsApp review request workflow immediately after delivering service to steadily build 5-star social proof.",
+      },
+    ],
+  },
   {
     slug: "local-seo-checklist-bikapur-businesses",
     title: "The local SEO checklist for Bikapur and Ayodhya businesses",

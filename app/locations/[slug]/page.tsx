@@ -19,12 +19,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const loc = LOCATIONS.find((l) => l.slug === slug);
   if (!loc) return {};
-  const title = `Web Design & SEO in ${loc.city}`;
+  const title = loc.metaTitle || `Web Design & SEO in ${loc.city}`;
+  const description = (
+    loc.metaDesc ||
+    `Web design, development and SEO for ${loc.city} businesses — built by Trustpages from Bikapur, Ayodhya. ${loc.focus}`
+  ).slice(0, 158);
   return {
     title,
-    description: `Web design, development and SEO for ${loc.city} businesses — built by Trustpages from Bikapur, Ayodhya. ${loc.focus}`.slice(0, 158),
+    description,
     alternates: { canonical: `/locations/${loc.slug}` },
-    keywords: [
+    keywords: loc.keywords || [
       `web design ${loc.city}`,
       `website developer ${loc.city}`,
       `SEO agency ${loc.city}`,
@@ -32,7 +36,7 @@ export async function generateMetadata({
     ],
     openGraph: {
       title: `${title} | Trustpages`,
-      description: loc.focus,
+      description,
       url: abs(`/locations/${loc.slug}/`),
     },
   };
@@ -57,7 +61,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           {
             "@type": "WebPage",
             "@id": abs(`/locations/${loc.slug}/#page`),
-            name: `Web design and SEO in ${loc.city}`,
+            name: `Web design, development and SEO in ${loc.city}`,
             description: loc.intro,
             isPartOf: { "@id": `${abs("/")}#website` },
             about: { "@id": `${abs("/")}#localbusiness` },
@@ -84,7 +88,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
 
       <PageHero
         eyebrow={`${loc.kind === "local" ? "Local" : "Global"} · ${loc.city}, ${loc.country}`}
-        title={`Web design & SEO in`}
+        title={loc.heroTitle || `Web design & SEO in`}
         highlight={loc.city}
         intro={loc.intro}
         trail={trail}
@@ -103,14 +107,14 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       <section className="border-b border-line bg-white py-10">
         <div className="shell max-w-3xl">
           <h2 className="font-display text-[1.1rem] font-semibold text-navy">
-            Who builds websites in {loc.city}?
+            Who builds websites and provides web dev in {loc.city}?
           </h2>
           <p className="mt-3 text-[0.97rem] leading-relaxed text-body">
-            <strong className="text-navy">Trustpages</strong> designs, builds and ranks websites for
-            businesses in {loc.city}, {loc.region === loc.country ? "" : loc.region + ", "}
-            {loc.country}. {loc.focus} Projects typically start at ₹24,999 for a
-            five-page website and ₹15,000/month for SEO, with a fixed written scope agreed before
-            work begins. Contact: {SITE.phoneDisplay} · {SITE.email}.
+            <strong className="text-navy">Trustpages</strong> is a top-rated website maker and web
+            development studio for businesses in {loc.city}, {loc.region === loc.country ? "" : loc.region + ", "}
+            {loc.country}. {loc.focus} Projects start at ₹24,999 for a custom five-page website and
+            ₹15,000/month for local SEO, with a fixed written scope agreed before work begins.
+            Contact: {SITE.phoneDisplay} · {SITE.email}.
           </p>
         </div>
       </section>
