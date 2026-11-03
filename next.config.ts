@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async rewrites() {
+    return [
+      { source: "/.well-known/llms.txt", destination: "/llms.txt" },
+      { source: "/.well-known/llms-full.txt", destination: "/llms-full.txt" },
+    ];
+  },
   async headers() {
     return [
       { source: "/(.*)", headers: securityHeaders },

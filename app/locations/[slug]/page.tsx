@@ -66,6 +66,10 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             isPartOf: { "@id": `${abs("/")}#website` },
             about: { "@id": `${abs("/")}#localbusiness` },
             inLanguage: "en-IN",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["#aeo-summary", "h1"],
+            },
           },
           {
             "@type": "Service",

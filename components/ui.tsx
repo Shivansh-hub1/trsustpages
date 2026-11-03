@@ -165,7 +165,7 @@ export function PageHero({
             <h1 className="display-hero mt-3 text-navy">
               {title} {highlight && <span className="grad-text">{highlight}</span>}
             </h1>
-            {intro && <div className="mt-5 max-w-2xl lead">{intro}</div>}
+            {intro && <div id="aeo-summary" className="mt-5 max-w-2xl lead">{intro}</div>}
             {children && <div className="mt-7">{children}</div>}
           </div>
         </div>
