@@ -29,9 +29,9 @@ export default function WorkPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {INSPIRATION.map((item, index) => {
               const screens = [
-                "/screenshots/website-design.png",
-                "/screenshots/ecommerce.png",
-                "/screenshots/web-development.png",
+                "/screenshots/project-arts.png",
+                "/screenshots/project-spa.png",
+                "/screenshots/project-organizer.png",
               ];
               return (
                 <article key={item.title} className="card flex flex-col overflow-hidden">

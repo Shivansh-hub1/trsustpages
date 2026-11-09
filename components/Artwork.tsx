@@ -20,7 +20,7 @@ export function HeroArtwork() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <div className="ml-3 flex h-6 flex-1 items-center gap-2 rounded-full bg-white px-3 text-[11px] font-medium text-navy/70 shadow-inner ring-1 ring-line">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
-            <span className="truncate">devshivansh.in/services/web-development</span>
+            <span className="truncate">project-preview.agency/live-app</span>
             <span className="ml-auto text-[10px] text-[#1a7f45] font-semibold hidden sm:flex items-center gap-1">
               <span className="h-1.5 w-1.5 rounded-full bg-[#28c840]" /> SSL Verified
             </span>
@@ -30,8 +30,8 @@ export function HeroArtwork() {
         {/* Real website screenshot */}
         <div className="relative aspect-[16/11] w-full overflow-hidden bg-mist">
           <img
-            src="/screenshots/web-development.png"
-            alt="Trustpages live custom web development project screenshot"
+            src="/screenshots/project-hero.png"
+            alt="Live modern web project showcase screenshot"
             width={1200}
             height={825}
             className="h-full w-full object-cover object-top transition duration-500 hover:scale-[1.02]"
@@ -176,7 +176,7 @@ export function OrbitDiagram({ items }: { items: { label: string; icon: ReactNod
 /** Reusable abstract "project" mock — tints per case study, no photos. */
 /** Real screenshot project mock for case studies. */
 export function ProjectMock({
-  screenshot = "/screenshots/web-development.png",
+  screenshot = "/screenshots/project-hero.png",
   label,
   dense = false,
 }: {

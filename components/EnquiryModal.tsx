@@ -160,13 +160,13 @@ Message: ${message}`;
                   <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
                   <span className="h-2 w-2 rounded-full bg-[#28c840]" />
                   <span className="ml-2 h-4 flex-1 rounded-full bg-white px-2 text-[10px] text-navy/60 font-medium flex items-center">
-                    devshivansh.in/locations/ayodhya
+                    pagespeed.web.dev/live-audit
                   </span>
                 </div>
                 <div className="relative h-28 w-full overflow-hidden bg-mist">
                   <img
-                    src="/screenshots/ayodhya-hub.png"
-                    alt="Trustpages live site preview"
+                    src="/screenshots/project-analytics.png"
+                    alt="Live Google Core Web Vitals audit showcase"
                     width={400}
                     height={220}
                     className="h-full w-full object-cover object-top"
