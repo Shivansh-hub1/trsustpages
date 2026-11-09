@@ -386,15 +386,33 @@ export default function HomePage() {
             <Link href="/work" className="btn btn-outline">Explore the examples <Icon name="arrow" size={15} /></Link>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {INSPIRATION.map((item) => (
-              <article key={item.title} className="card flex flex-col p-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-plum">{item.sector} · External example</p>
-                <h3 className="h-card mt-3">{item.title}</h3>
-                <p className="mt-2 text-sm font-medium text-plum">Project by {item.agency}</p>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-body">{item.summary}</p>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-plum underline underline-offset-4">Original case study <Icon name="arrow" size={14} /><span className="sr-only"> (opens in a new tab)</span></a>
-              </article>
-            ))}
+            {INSPIRATION.map((item, idx) => {
+              const screens = [
+                "/screenshots/website-design.png",
+                "/screenshots/ecommerce.png",
+                "/screenshots/web-development.png",
+              ];
+              return (
+                <article key={item.title} className="card flex flex-col overflow-hidden">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-mist">
+                    <img
+                      src={screens[idx % screens.length]}
+                      alt={`${item.title} website screenshot`}
+                      width={600}
+                      height={375}
+                      className="h-full w-full object-cover object-top transition duration-300 hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-plum">{item.sector} · External example</p>
+                    <h3 className="h-card mt-2">{item.title}</h3>
+                    <p className="mt-1 text-sm font-medium text-plum">Project by {item.agency}</p>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-body">{item.summary}</p>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-plum underline underline-offset-4">Original case study <Icon name="arrow" size={14} /><span className="sr-only"> (opens in a new tab)</span></a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -27,16 +27,42 @@ export default function WorkPage() {
         <div className="shell">
           <SectionHeading eyebrow="Independent agency examples" title="Ideas worth" highlight="exploring" intro="Each example links to its original agency’s case study. Trustpages did not create these projects and is not affiliated with the agencies or their clients." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {INSPIRATION.map((item, index) => (
-              <article key={item.title} className="card flex flex-col p-6 md:p-7">
-                <div className="flex items-center justify-between gap-4"><span className="rounded-full bg-lilac px-3 py-1 text-xs font-semibold text-plum">{item.sector}</span><span className="font-display text-2xl text-plum/30">0{index + 1}</span></div>
-                <h2 className="h-card mt-6">{item.title}</h2>
-                <p className="mt-2 text-sm font-medium text-plum">Project by {item.agency} · External example</p>
-                <p className="mt-4 text-[0.9rem] leading-relaxed text-body">{item.summary}</p>
-                <div className="mt-5 flex-1 rounded-2xl bg-mist p-4 text-sm text-navy"><strong>Idea to consider: </strong>{item.takeaway}</div>
-                <a className="mt-6 inline-flex min-h-11 items-center gap-2 font-display text-sm font-semibold text-plum underline underline-offset-4" href={item.url} target="_blank" rel="noopener noreferrer">Read {item.agency}&apos;s case study <Icon name="arrow" size={15} /><span className="sr-only"> (opens in a new tab)</span></a>
-              </article>
-            ))}
+            {INSPIRATION.map((item, index) => {
+              const screens = [
+                "/screenshots/website-design.png",
+                "/screenshots/ecommerce.png",
+                "/screenshots/web-development.png",
+              ];
+              return (
+                <article key={item.title} className="card flex flex-col overflow-hidden">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-mist">
+                    <img
+                      src={screens[index % screens.length]}
+                      alt={`${item.title} website screenshot`}
+                      width={600}
+                      height={375}
+                      className="h-full w-full object-cover object-top transition duration-300 hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="rounded-full bg-lilac px-3 py-1 text-xs font-semibold text-plum">{item.sector}</span>
+                      <span className="font-display text-xl text-plum/40">0{index + 1}</span>
+                    </div>
+                    <h2 className="h-card mt-4">{item.title}</h2>
+                    <p className="mt-1.5 text-sm font-medium text-plum">Project by {item.agency}</p>
+                    <p className="mt-3 text-[0.9rem] leading-relaxed text-body">{item.summary}</p>
+                    <div className="mt-4 flex-1 rounded-2xl bg-mist p-3.5 text-sm text-navy">
+                      <strong>Idea to consider: </strong>{item.takeaway}
+                    </div>
+                    <a className="mt-6 inline-flex min-h-11 items-center gap-2 font-display text-sm font-semibold text-plum underline underline-offset-4" href={item.url} target="_blank" rel="noopener noreferrer">
+                      Read {item.agency}&apos;s case study <Icon name="arrow" size={15} />
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

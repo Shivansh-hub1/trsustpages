@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
    ================================================================ */
 
 /** Hero: abstract browser window + floating proof cards. */
+/** Hero: Real browser frame showcasing authentic client site screenshot with live metrics. */
 export function HeroArtwork() {
   return (
     <div className="relative mx-auto w-full max-w-[560px]" aria-hidden="true">
@@ -13,90 +14,57 @@ export function HeroArtwork() {
 
       {/* main browser frame */}
       <div className="relative overflow-hidden rounded-[26px] border border-line bg-white shadow-[0_45px_90px_-50px_rgba(42,36,92,0.55)]">
-        <div className="flex items-center gap-1.5 border-b border-line bg-mist/70 px-4 py-3">
+        <div className="flex items-center gap-1.5 border-b border-line bg-mist/90 px-4 py-2.5">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-          <span className="ml-3 h-5 flex-1 rounded-full bg-white/80 ring-1 ring-line" />
+          <div className="ml-3 flex h-6 flex-1 items-center gap-2 rounded-full bg-white px-3 text-[11px] font-medium text-navy/70 shadow-inner ring-1 ring-line">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+            <span className="truncate">devshivansh.in/services/web-development</span>
+            <span className="ml-auto text-[10px] text-[#1a7f45] font-semibold hidden sm:flex items-center gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#28c840]" /> SSL Verified
+            </span>
+          </div>
         </div>
 
-        <div className="space-y-4 p-5">
-          <div className="flex items-center gap-2">
-            <span className="h-7 w-7 rounded-lg bg-grad" />
-            <span className="h-2.5 w-16 rounded-full bg-navy/25" />
-            <span className="ml-auto h-2 w-9 rounded-full bg-navy/12" />
-            <span className="h-2 w-9 rounded-full bg-navy/12" />
-            <span className="h-5 w-14 rounded-full bg-grad" />
-          </div>
-
-          <div className="rounded-2xl bg-gradient-to-br from-lilac-soft to-sky p-4">
-            <div className="h-2.5 w-24 rounded-full bg-plum/50" />
-            <div className="mt-3 h-4 w-[86%] rounded-full bg-navy/70" />
-            <div className="mt-2 h-4 w-[62%] rounded-full bg-plum/60" />
-            <div className="mt-3 h-2 w-[74%] rounded-full bg-navy/15" />
-            <div className="mt-1.5 h-2 w-[58%] rounded-full bg-navy/15" />
-            <div className="mt-4 flex gap-2">
-              <span className="h-7 w-24 rounded-full bg-grad" />
-              <span className="h-7 w-20 rounded-full bg-white ring-1 ring-line" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-2.5">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="rounded-xl border border-line bg-white p-2.5">
-                <span className="block h-6 w-6 rounded-lg bg-lilac" />
-                <span className="mt-2 block h-1.5 w-10 rounded-full bg-navy/25" />
-                <span className="mt-1.5 block h-1.5 w-14 rounded-full bg-navy/12" />
-              </div>
-            ))}
-          </div>
-
-          {/* "ranking" trend line — the outcome people buy */}
-          <div className="rounded-xl border border-line bg-white p-3">
-            <svg viewBox="0 0 240 56" className="h-14 w-full" role="presentation">
-              <defs>
-                <linearGradient id="hero-line" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#6b2e88" />
-                  <stop offset="100%" stopColor="#2a245c" />
-                </linearGradient>
-                <linearGradient id="hero-fill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#6b2e88" stopOpacity="0.22" />
-                  <stop offset="100%" stopColor="#6b2e88" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-              <path d="M0 44 L34 40 L68 42 L102 30 L136 26 L170 18 L204 12 L240 6 L240 56 L0 56 Z" fill="url(#hero-fill)" />
-              <path d="M0 44 L34 40 L68 42 L102 30 L136 26 L170 18 L204 12 L240 6" fill="none" stroke="url(#hero-line)" strokeWidth="2.5" strokeLinecap="round" />
-              <circle cx="240" cy="6" r="4" fill="#6b2e88" />
-            </svg>
-          </div>
+        {/* Real website screenshot */}
+        <div className="relative aspect-[16/11] w-full overflow-hidden bg-mist">
+          <img
+            src="/screenshots/web-development.png"
+            alt="Trustpages live custom web development project screenshot"
+            width={1200}
+            height={825}
+            className="h-full w-full object-cover object-top transition duration-500 hover:scale-[1.02]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/35 via-transparent to-transparent opacity-80" />
         </div>
       </div>
 
-      {/* floating proof card: speed */}
-      <div className="absolute -left-4 bottom-16 hidden w-[168px] rounded-2xl border border-line bg-white p-3 shadow-[0_28px_60px_-34px_rgba(42,36,92,0.5)] sm:block">
-        <div className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#e9f9f0] text-[#1a7f45]">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7" /></svg>
+      {/* floating proof card: speed & Core Web Vitals */}
+      <div className="absolute -left-4 -bottom-5 hidden w-[184px] rounded-2xl border border-line bg-white p-3 shadow-[0_28px_60px_-34px_rgba(42,36,92,0.5)] sm:block">
+        <div className="flex items-center gap-2.5">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#e9f9f0] text-[#1a7f45] font-display font-bold text-xs ring-2 ring-[#1a7f45]/20">
+            100
           </span>
           <div>
-            <p className="font-display text-[0.78rem] font-semibold leading-none text-navy">Speed focused</p>
-            <p className="mt-1 text-[0.63rem] leading-none text-body">Performance matters</p>
+            <p className="font-display text-[0.8rem] font-bold text-navy">Performance 100</p>
+            <p className="text-[0.68rem] text-body">Core Web Vitals</p>
           </div>
         </div>
         <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-mist">
-          <span className="block h-full w-[96%] rounded-full bg-[#28c840]" />
+          <span className="block h-full w-[98%] rounded-full bg-[#28c840]" />
         </div>
       </div>
 
-      {/* floating proof card: map pack */}
-      <div className="absolute -right-3 top-24 hidden w-[186px] rounded-2xl border border-line bg-white p-3 shadow-[0_28px_60px_-34px_rgba(42,36,92,0.5)] md:block animate-float">
-        <div className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-lilac text-plum">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z" /><circle cx="12" cy="10" r="2.6" /></svg>
+      {/* floating proof card: map pack #1 */}
+      <div className="absolute -right-4 -top-4 hidden w-[196px] rounded-2xl border border-line bg-white p-3 shadow-[0_28px_60px_-34px_rgba(42,36,92,0.5)] md:block animate-float">
+        <div className="flex items-center gap-2.5">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#f4ebff] text-plum font-display font-bold text-xs ring-2 ring-plum/20">
+            #1
           </span>
           <div>
-            <p className="font-display text-[0.78rem] font-semibold leading-none text-navy">Local SEO</p>
-            <p className="mt-1 text-[0.63rem] leading-none text-body">Built to be found</p>
+            <p className="font-display text-[0.8rem] font-bold text-navy">Rank #1 in Ayodhya</p>
+            <p className="text-[0.68rem] text-body">Google Maps &amp; Search</p>
           </div>
         </div>
       </div>
@@ -206,62 +174,40 @@ export function OrbitDiagram({ items }: { items: { label: string; icon: ReactNod
 }
 
 /** Reusable abstract "project" mock — tints per case study, no photos. */
-export function ProjectMock({ tone = "plum", label, dense = false }: { tone?: string; label?: string; dense?: boolean }) {
-  const tones: Record<string, { a: string; b: string; ink: string }> = {
-    plum: { a: "#f4e0ff", b: "#faf1ff", ink: "#6b2e88" },
-    navy: { a: "#e7e9fb", b: "#f4f7ff", ink: "#2a245c" },
-    sky: { a: "#eaeffd", b: "#f7f9ff", ink: "#3b5cb8" },
-    lilac: { a: "#f6e9ff", b: "#fdf7ff", ink: "#894fa6" },
-  };
-  const t = tones[tone] ?? tones.plum;
+/** Real screenshot project mock for case studies. */
+export function ProjectMock({
+  screenshot = "/screenshots/web-development.png",
+  label,
+  dense = false,
+}: {
+  screenshot?: string;
+  label?: string;
+  dense?: boolean;
+}) {
   return (
     <div
       className={`relative overflow-hidden border-b border-line lg:h-full ${dense ? "rounded-none rounded-tl-[24px] lg:rounded-l-[26px] lg:rounded-tr-none" : "rounded-t-[24px]"}`}
-      style={{ background: `linear-gradient(135deg, ${t.a} 0%, ${t.b} 100%)` }}
       aria-hidden="true"
     >
-      <div className="p-5">
-        <div className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full" style={{ background: t.ink, opacity: 0.35 }} />
-          <span className="h-2 w-2 rounded-full" style={{ background: t.ink, opacity: 0.25 }} />
-          <span className="h-2 w-2 rounded-full" style={{ background: t.ink, opacity: 0.15 }} />
-        </div>
-        <div className="mt-4 h-3 w-3/4 rounded-full" style={{ background: t.ink, opacity: 0.75 }} />
-        <div className="mt-2 h-2 w-1/2 rounded-full" style={{ background: t.ink, opacity: 0.28 }} />
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="h-14 rounded-xl bg-white/75 ring-1 ring-white" />
-          ))}
-        </div>
-        <div className="mt-3 flex gap-2">
-          <span className="h-6 w-20 rounded-full" style={{ background: t.ink, opacity: 0.8 }} />
-          <span className="h-6 w-14 rounded-full bg-white/80" />
-        </div>
-
-        {dense && (
-          <>
-            <div className="mt-5 grid grid-cols-3 gap-2">
-              {[0, 1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-16 rounded-xl bg-white/70 ring-1 ring-white" />
-              ))}
-            </div>
-            <div className="mt-5 space-y-2">
-              <div className="h-2 w-full rounded-full" style={{ background: t.ink, opacity: 0.16 }} />
-              <div className="h-2 w-[86%] rounded-full" style={{ background: t.ink, opacity: 0.16 }} />
-              <div className="h-2 w-[64%] rounded-full" style={{ background: t.ink, opacity: 0.16 }} />
-            </div>
-            <div className="mt-5 flex gap-2">
-              <span className="h-14 flex-1 rounded-xl bg-white/75 ring-1 ring-white" />
-              <span className="h-14 flex-1 rounded-xl bg-white/75 ring-1 ring-white" />
-            </div>
-          </>
+      <div className="flex items-center gap-1.5 border-b border-line bg-mist/80 px-4 py-2">
+        <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+        <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+        <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+        {label && (
+          <span className="ml-auto rounded-full bg-white px-2 py-0.5 font-display text-[0.62rem] font-semibold text-plum">
+            {label}
+          </span>
         )}
       </div>
-      {label && (
-        <span className="absolute right-3 top-3 rounded-full bg-white/85 px-2.5 py-1 font-display text-[0.62rem] font-semibold uppercase tracking-wider" style={{ color: t.ink }}>
-          {label}
-        </span>
-      )}
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-mist">
+        <img
+          src={screenshot}
+          alt={label ? `${label} website screenshot` : "Website project screenshot"}
+          width={800}
+          height={500}
+          className="h-full w-full object-cover object-top transition duration-300 hover:scale-105"
+        />
+      </div>
     </div>
   );
 }

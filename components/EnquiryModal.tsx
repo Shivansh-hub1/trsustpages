@@ -153,35 +153,26 @@ Message: ${message}`;
           {/* Left Column: Visual & Value Props */}
           <div className="relative hidden flex-col justify-between bg-gradient-to-br from-[#faf4ff] via-[#f7f0ff] to-[#edf2ff] p-8 md:flex">
             <div>
-              {/* Target / Growth Graphic */}
-              <div className="relative mb-6 flex justify-center" aria-hidden="true">
-                <svg width="130" height="110" viewBox="0 0 130 110" fill="none" className="drop-shadow-sm">
-                  {/* Decorative glowing backplate */}
-                  <ellipse cx="65" cy="55" rx="50" ry="40" fill="url(#t-glow)" opacity="0.4" />
-                  
-                  {/* Bullseye target circles */}
-                  <circle cx="58" cy="48" r="38" fill="#ffffff" stroke="#e0d4f5" strokeWidth="2.5" />
-                  <circle cx="58" cy="48" r="28" fill="#f5edff" stroke="#6b2e88" strokeWidth="3.5" />
-                  <circle cx="58" cy="48" r="18" fill="#ffffff" stroke="#894fa6" strokeWidth="3" />
-                  <circle cx="58" cy="48" r="8" fill="#6b2e88" />
-                  
-                  {/* Arrow hitting the bullseye */}
-                  <path d="M92 14 L58 48" stroke="#5d2f74" strokeWidth="3.5" strokeLinecap="round" />
-                  <polygon points="56,46 54,54 62,52" fill="#5d2f74" />
-                  <path d="M88 10 L96 18 M92 6 L100 14" stroke="#894fa6" strokeWidth="2" strokeLinecap="round" />
-                  
-                  {/* Metric 3D growth bars */}
-                  <rect x="88" y="55" width="10" height="28" rx="3" fill="#c084fc" opacity="0.85" />
-                  <rect x="102" y="42" width="10" height="41" rx="3" fill="#894fa6" />
-                  <rect x="116" y="30" width="10" height="53" rx="3" fill="#6b2e88" />
-
-                  <defs>
-                    <radialGradient id="t-glow" cx="0.5" cy="0.5" r="0.5">
-                      <stop offset="0%" stopColor="#dda7fb" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="#f4e0ff" stopOpacity="0" />
-                    </radialGradient>
-                  </defs>
-                </svg>
+              {/* Live Website Screenshot Preview Card */}
+              <div className="relative mb-6 overflow-hidden rounded-2xl border border-purple-200/70 bg-white shadow-sm ring-1 ring-black/5" aria-hidden="true">
+                <div className="flex items-center gap-1.5 border-b border-purple-100 bg-[#f8f5fd] px-3 py-2">
+                  <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+                  <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+                  <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+                  <span className="ml-2 h-4 flex-1 rounded-full bg-white px-2 text-[10px] text-navy/60 font-medium flex items-center">
+                    devshivansh.in/locations/ayodhya
+                  </span>
+                </div>
+                <div className="relative h-28 w-full overflow-hidden bg-mist">
+                  <img
+                    src="/screenshots/ayodhya-hub.png"
+                    alt="Trustpages live site preview"
+                    width={400}
+                    height={220}
+                    className="h-full w-full object-cover object-top"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#faf4ff] via-transparent to-transparent opacity-60" />
+                </div>
               </div>
 
               {/* Title & Description */}
