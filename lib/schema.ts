@@ -19,6 +19,16 @@ export function organizationSchema() {
     slogan: SITE.tagline,
     email: SITE.email,
     telephone: SITE.phone,
+    founder: {
+      "@type": "Person",
+      name: "Shivansh Tripathi",
+      jobTitle: "Founder & Lead Developer",
+      url: SITE.url,
+      sameAs: [
+        "https://www.linkedin.com/in/shivansh-tripathi",
+        "https://github.com/Shivansh-hub1"
+      ]
+    },
     sameAs: Object.values(SITE.social),
     address: {
       "@type": "PostalAddress",
@@ -100,6 +110,25 @@ export function localBusinessSchema() {
         closes: "19:00",
       },
     ],
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#aeo-summary", "h1"]
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web Development & SEO Services in Ayodhya",
+      itemListElement: SERVICES.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.name,
+          description: s.blurb,
+        },
+        priceCurrency: "INR",
+        price: s.priceFrom.replace(/[^\d]/g, ""),
+        availability: "https://schema.org/InStock",
+      })),
+    },
     parentOrganization: { "@id": ORG_ID },
     sameAs: Object.values(SITE.social),
   };
@@ -113,6 +142,10 @@ export function websiteSchema() {
     name: SITE.name,
     inLanguage: SITE.lang,
     publisher: { "@id": ORG_ID },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#aeo-summary", "h1"]
+    },
     potentialAction: {
       "@type": "SearchAction",
       target: { "@type": "EntryPoint", urlTemplate: `${SITE.url}/blog?q={search_term_string}` },

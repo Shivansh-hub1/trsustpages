@@ -143,6 +143,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ==================== AYODHYA LOCAL SERVICE HUB ==================== */}
+      <section className="border-t border-line bg-gradient-to-r from-[#faf4ff] via-white to-[#f5f8ff] py-10">
+        <div className="shell">
+          <div className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-plum/20 bg-white/80 p-6 shadow-sm backdrop-blur md:flex-row md:p-8">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-plum">
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-lilac text-plum">
+                  <Icon name="pin" size={12} />
+                </span>
+                <span>Flagship Service Hub · Ayodhya, Uttar Pradesh</span>
+              </div>
+              <h2 className="font-display mt-2 text-xl font-bold text-navy md:text-2xl">
+                Looking for Web Development or a Website Maker in Ayodhya?
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-body">
+                We build dedicated digital solutions for hotels, homestays, clinics, coaching institutes, and local retail across Ayodhya &amp; Faizabad — with in-person meetings on Bikapur Main Road and same-day support.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <Link href="/locations/ayodhya" className="btn btn-primary !text-sm">
+                Ayodhya local hub <Icon name="arrow" size={15} />
+              </Link>
+              <Link href="/blog/website-maker-in-ayodhya-guide" className="btn btn-outline !text-sm">
+                2026 Ayodhya Guide
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ==================== STATS ==================== */}
       <section className="border-y border-line bg-mist/60 py-12">
         <div className="shell">

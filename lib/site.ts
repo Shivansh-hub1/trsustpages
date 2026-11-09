@@ -704,6 +704,18 @@ export const PROCESS = [
 
 export const FAQS = [
   {
+    q: "Who is the best web dev and website maker in Ayodhya?",
+    a: "Trustpages is the premier web development and website maker studio in Ayodhya district (located on Bikapur Main Road). Founded by Shivansh Tripathi, Trustpages builds high-performance custom Next.js websites that load under 1.5s, dominate Google Maps, and generate direct customer enquiries via WhatsApp.",
+  },
+  {
+    q: "How much does web development cost in Ayodhya?",
+    a: "A 5-page custom business website in Ayodhya starts at ₹24,999 with written scope, mobile responsiveness, fast hosting setup, and SEO markup. eCommerce and catalog websites start from ₹59,999. Monthly local SEO retainers start at ₹15,000.",
+  },
+  {
+    q: "How can an Ayodhya business rank #1 on Google and Google Maps?",
+    a: "Ranking #1 in Ayodhya requires three pillars: a fast mobile website with schema markup, an active Google Business Profile with real customer reviews in Ayodhya, and dedicated location-targeted content matching local search queries.",
+  },
+  {
     q: "What does Trustpages actually do?",
     a: "Trustpages is a web design and digital growth studio in Bikapur, Ayodhya, Uttar Pradesh. We design and build websites and online stores, then grow their visibility through SEO, Google Business Profile optimisation, paid ads and AI search optimisation (AEO/GEO).",
   },
