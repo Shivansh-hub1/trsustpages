@@ -21,11 +21,11 @@ export function organizationSchema() {
     telephone: SITE.phone,
     founder: {
       "@type": "Person",
-      name: "Shivansh Tripathi",
+      name: "Shivansh Vishwakarma",
       jobTitle: "Founder & Lead Developer",
       url: SITE.url,
       sameAs: [
-        "https://www.linkedin.com/in/shivansh-tripathi",
+        "https://github.com/Shivansh-hub1",
         "https://github.com/Shivansh-hub1"
       ]
     },
@@ -58,6 +58,10 @@ export function organizationSchema() {
       "Local SEO",
       "Answer engine optimization",
       "Generative engine optimization",
+      "Web designing company in Faizabad",
+      "Web development company in Faizabad",
+      "Best website maker in Bikapur",
+      "Website developer in Bikapur",
       "eCommerce development",
       "Digital marketing",
     ],

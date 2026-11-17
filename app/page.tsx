@@ -12,7 +12,7 @@ import { INSPIRATION } from "@/lib/inspiration";
 import { homeGraph, faqSchema, breadcrumbSchema, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Web Dev & Website Maker in Ayodhya | Trustpages",
+  title: "Best Web Designing & Development Company in Faizabad, Ayodhya & Bikapur | Trustpages",
   description:
     "Leading website maker, web dev and SEO studio in Ayodhya & Bikapur. Fast websites that rank #1 on Google search, Maps & AI answers. Fixed pricing from ₹24,999.",
   alternates: { canonical: "/" },

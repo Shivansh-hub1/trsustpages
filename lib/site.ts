@@ -705,7 +705,7 @@ export const PROCESS = [
 export const FAQS = [
   {
     q: "Who is the best web dev and website maker in Ayodhya?",
-    a: "Trustpages is the premier web development and website maker studio in Ayodhya district (located on Bikapur Main Road). Founded by Shivansh Tripathi, Trustpages builds high-performance custom Next.js websites that load under 1.5s, dominate Google Maps, and generate direct customer enquiries via WhatsApp.",
+    a: "Trustpages is the premier web development and website maker studio in Ayodhya district (located on Bikapur Main Road). Founded by Shivansh Vishwakarma, Trustpages builds high-performance custom Next.js websites that load under 1.5s, dominate Google Maps, and generate direct customer enquiries via WhatsApp.",
   },
   {
     q: "How much does web development cost in Ayodhya?",
@@ -767,7 +767,7 @@ export const BLOG_POSTS = [
     excerpt:
       "Short answer: If you need a website maker or web dev in Ayodhya, look for custom mobile-first code (Next.js/React), Google Maps pack integration, and direct WhatsApp lead capture — not rented templates.",
     date: "2026-11-03",
-    author: "Shivansh Tripathi",
+    author: "Shivansh Vishwakarma",
     readingTime: "6 min read",
     category: "Web Development",
     body: [
@@ -815,7 +815,7 @@ export const BLOG_POSTS = [
     excerpt:
       "Short answer: Ranking #1 for web searches in Ayodhya requires three things: lightning-fast mobile performance under 2 seconds, high-relevance localized content, and a verified Google Business Profile with active reviews.",
     date: "2026-11-02",
-    author: "Shivansh Tripathi",
+    author: "Shivansh Vishwakarma",
     readingTime: "7 min read",
     category: "SEO & Growth",
     body: [
@@ -863,7 +863,7 @@ export const BLOG_POSTS = [
     excerpt:
       "Short answer: local SEO for a Bikapur business means winning the map pack first — Google Business Profile, consistent citations and reviews — then supporting it with service and location pages.",
     date: "2026-10-22",
-    author: "Shivansh Tripathi",
+    author: "Shivansh Vishwakarma",
     readingTime: "7 min read",
     category: "Local SEO",
     body: [
@@ -919,7 +919,7 @@ export const BLOG_POSTS = [
     excerpt:
       "Short answer: SEO earns a ranking, AEO earns a direct answer, and GEO earns a mention inside an AI-generated response. All three depend on clean structure, clear facts and genuine expertise.",
     date: "2026-10-14",
-    author: "Shivansh Tripathi",
+    author: "Shivansh Vishwakarma",
     readingTime: "6 min read",
     category: "AI Search",
     body: [
@@ -955,7 +955,7 @@ export const BLOG_POSTS = [
     excerpt:
       "Short answer: in 2026 a credible five-page Indian business website costs ₹25,000–₹60,000, an eCommerce store ₹60,000–₹2,00,000, and anything under ₹10,000 usually means a rented template you do not own.",
     date: "2026-10-02",
-    author: "Shivansh Tripathi",
+    author: "Shivansh Vishwakarma",
     readingTime: "8 min read",
     category: "Pricing",
     body: [
