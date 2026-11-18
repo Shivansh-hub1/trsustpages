@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon, type IconName } from "@/components/Icons";
 import Faq from "@/components/Faq";
+import HeroVisual from "@/components/HeroVisual";
 import { PageHero, SectionHeading, JsonLd, CheckList, CTABand, Breadcrumbs } from "@/components/ui";
 import { SERVICES, SITE, LOCATIONS } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, graph, serviceSchema, abs } from "@/lib/schema";
@@ -65,7 +66,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         highlight="that pays for itself"
         intro={service.blurb}
         trail={trail}
-      >
+        visual={<HeroVisual tag={`${service.shortName} Package`} priceFrom={service.priceFrom} />}>
         <div className="flex flex-wrap items-center gap-3">
           <Link href="/contact" className="btn btn-primary">
             Get a fixed quote <Icon name="arrow" size={16} />

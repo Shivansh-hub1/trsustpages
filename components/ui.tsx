@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Icon, type IconName } from "./Icons";
 import { SITE } from "@/lib/site";
+import HeroVisual from "./HeroVisual";
 
 /* ------------------------------------------------------------------ */
 /* JSON-LD                                                            */
@@ -145,6 +146,7 @@ export function PageHero({
   highlight,
   intro,
   trail,
+  visual,
   children,
 }: {
   eyebrow?: string;
@@ -152,6 +154,7 @@ export function PageHero({
   highlight?: string;
   intro?: ReactNode;
   trail: { name: string; path: string }[];
+  visual?: ReactNode;
   children?: ReactNode;
 }) {
   return (
@@ -159,7 +162,7 @@ export function PageHero({
       <div className="pointer-events-none absolute inset-0 opacity-[0.55] [mask-image:radial-gradient(60%_60%_at_50%_0%,#000,transparent)] dotgrid" aria-hidden="true" />
       <div className="shell relative py-12 md:py-16">
         <Breadcrumbs trail={trail} />
-        <div className="mt-6 grid items-end gap-8 lg:grid-cols-[1.35fr_1fr]">
+        <div className="mt-6 grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
             {eyebrow && <p className="eyebrow">{eyebrow}</p>}
             <h1 className="display-hero mt-3 text-navy">
@@ -167,6 +170,9 @@ export function PageHero({
             </h1>
             {intro && <div id="aeo-summary" className="mt-5 max-w-2xl lead">{intro}</div>}
             {children && <div className="mt-7">{children}</div>}
+          </div>
+          <div className="w-full">
+            {visual || <HeroVisual />}
           </div>
         </div>
       </div>

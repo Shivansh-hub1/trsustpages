@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon, type IconName } from "@/components/Icons";
 import Faq from "@/components/Faq";
+import HeroVisual from "@/components/HeroVisual";
 import { PageHero, JsonLd, CheckList, CTABand, SectionHeading } from "@/components/ui";
 import { LOCATIONS, SERVICES, SITE } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, graph, abs } from "@/lib/schema";
@@ -99,6 +100,17 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         highlight={loc.city}
         intro={loc.intro}
         trail={trail}
+        visual={
+          <HeroVisual
+            screenshot="/screenshots/project-hero.png"
+            tag={`${loc.city} Digital Hub`}
+            badgeTop="100/100 Speed"
+            badgeBottom="Tested on Mobile 4G"
+            rating="5.0 ★ Google Rated"
+            location={`${loc.city}, ${loc.region}`}
+            priceFrom="₹24,999"
+          />
+        }
       >
         <div className="flex flex-wrap items-center gap-3">
           <Link href="/contact" className="btn btn-primary">
