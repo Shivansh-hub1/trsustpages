@@ -3,143 +3,121 @@
 import { useEffect, useState, useRef } from "react";
 
 /**
- * Premium Creative Agency Cursor Effect.
- * - Buttery-smooth fluid follower ring with ambient radial glow.
- * - Center target dot with vibrant gradient styling.
- * - Dynamic expansion & magnetic glow on hover over interactive elements.
- * - Zero layout thrashing, 60fps transform-only rendering with requestAnimationFrame.
- * - Only mounts on non-touch devices with fine pointers.
+ * Exact Matebiz Cursor Motion Effect.
+ * Matches:
+ * - .cursor-dot: 8px solid purple (#6b2e88) dot following mouse immediately
+ * - .cursor-outline: 32px thin purple ring trailing smoothly with requestAnimationFrame lerp
+ * - Smooth hover scaling on interactive targets
  */
 export default function CustomCursor() {
   const [mounted, setMounted] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicking, setIsClicking] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
   const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
-
-  const mouseX = useRef(-200);
-  const mouseY = useRef(-200);
-  const ringX = useRef(-200);
-  const ringY = useRef(-200);
-  const glowX = useRef(-200);
-  const glowY = useRef(-200);
-  const rafId = useRef<number | null>(null);
+  const outlineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Only enable on devices with a mouse/trackpad (no phones/tablets) and no reduced motion
-    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (!hasFinePointer || prefersReducedMotion) return;
+    // Disable on mobile/touch devices or if coarse pointer
+    if (
+      typeof window === "undefined" ||
+      "ontouchstart" in window ||
+      window.matchMedia("(pointer: coarse)").matches
+    ) {
+      return;
+    }
 
     setMounted(true);
 
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.current = e.clientX;
-      mouseY.current = e.clientY;
+    let mouseX = -100;
+    let mouseY = -100;
+    let outlineX = -100;
+    let outlineY = -100;
+    let isHovered = false;
+    let rafId: number;
 
-      // Position inner dot immediately for 0ms latency
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
       if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        dotRef.current.style.top = `${mouseY}px`;
+        dotRef.current.style.left = `${mouseX}px`;
+        dotRef.current.style.opacity = "1";
       }
-
-      setIsVisible(true);
+      if (outlineRef.current) {
+        outlineRef.current.style.opacity = "1";
+      }
     };
 
-    const handleMouseDown = () => setIsClicking(true);
-    const handleMouseUp = () => setIsClicking(false);
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
-
-    const handleMouseOver = (e: MouseEvent) => {
+    const onMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
-      if (!target) return;
-      const isInteractive = target.closest(
-        'a, button, input, textarea, select, [role="button"], .btn, .card, .card-flat, summary, label, nav, [data-open-enquire]'
-      );
-      setIsHovered(!!isInteractive);
+      if (
+        target?.closest(
+          "a, button, input, textarea, select, [role='button'], .btn, .card, .card-flat, summary, label"
+        )
+      ) {
+        isHovered = true;
+      } else {
+        isHovered = false;
+      }
     };
 
-    // Smooth lerp render loop
-    const render = () => {
-      // Ring follows mouse with smooth ease
-      const ringEase = 0.22;
-      ringX.current += (mouseX.current - ringX.current) * ringEase;
-      ringY.current += (mouseY.current - ringY.current) * ringEase;
-
-      // Outer glow follows with slightly more floaty lag
-      const glowEase = 0.12;
-      glowX.current += (mouseX.current - glowX.current) * glowEase;
-      glowY.current += (mouseY.current - glowY.current) * glowEase;
-
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${ringX.current}px, ${ringY.current}px, 0)`;
-      }
-
-      if (glowRef.current) {
-        glowRef.current.style.transform = `translate3d(${glowX.current}px, ${glowY.current}px, 0)`;
-      }
-
-      rafId.current = requestAnimationFrame(render);
+    const onMouseLeave = () => {
+      if (dotRef.current) dotRef.current.style.opacity = "0";
+      if (outlineRef.current) outlineRef.current.style.opacity = "0";
     };
 
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseenter", handleMouseEnter);
-    document.addEventListener("mouseover", handleMouseOver, { passive: true });
+    const onMouseEnter = () => {
+      if (dotRef.current) dotRef.current.style.opacity = "1";
+      if (outlineRef.current) outlineRef.current.style.opacity = "1";
+    };
 
-    rafId.current = requestAnimationFrame(render);
+    // Smooth 60fps lerp trailing loop for outline ring
+    const animate = () => {
+      outlineX += (mouseX - outlineX) * 0.2;
+      outlineY += (mouseY - outlineY) * 0.2;
+
+      if (outlineRef.current) {
+        outlineRef.current.style.top = `${outlineY}px`;
+        outlineRef.current.style.left = `${outlineX}px`;
+        outlineRef.current.style.transform = `translate(-50%, -50%) scale(${
+          isHovered ? 1.35 : 1
+        })`;
+      }
+
+      rafId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    window.addEventListener("mouseover", onMouseOver, { passive: true });
+    document.addEventListener("mouseleave", onMouseLeave);
+    document.addEventListener("mouseenter", onMouseEnter);
+
+    rafId = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseenter", handleMouseEnter);
-      document.removeEventListener("mouseover", handleMouseOver);
-      if (rafId.current) cancelAnimationFrame(rafId.current);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseover", onMouseOver);
+      document.removeEventListener("mouseleave", onMouseLeave);
+      document.removeEventListener("mouseenter", onMouseEnter);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
   if (!mounted) return null;
 
   return (
-    <div
-      className={`pointer-events-none fixed inset-0 z-[99999] transition-opacity duration-300 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-      aria-hidden="true"
-    >
-      {/* 1. Large Ambient Glow aura (drifts with momentum) */}
-      <div
-        ref={glowRef}
-        className="fixed top-0 left-0 -ml-16 -mt-16 h-32 w-32 rounded-full bg-gradient-to-tr from-[#6b2e88]/15 via-[#a855f7]/10 to-transparent blur-xl will-change-transform"
-      />
-
-      {/* 2. Outer Smooth Follower Ring */}
-      <div
-        ref={ringRef}
-        className={`fixed top-0 left-0 rounded-full border-2 will-change-transform transition-[width,height,margin,border-color,background-color,transform] duration-200 ease-out ${
-          isHovered
-            ? "-ml-7 -mt-7 h-14 w-14 border-[#6b2e88] bg-[#6b2e88]/15 shadow-[0_0_24px_rgba(107,46,136,0.45)] scale-110"
-            : isClicking
-            ? "-ml-3 -mt-3 h-6 w-6 border-[#a855f7] bg-[#6b2e88]/30 scale-90"
-            : "-ml-5 -mt-5 h-10 w-10 border-[#6b2e88]/60 bg-transparent shadow-[0_0_12px_rgba(107,46,136,0.2)]"
-        }`}
-      />
-
-      {/* 3. Center Vibrant Pointer Dot */}
+    <>
+      {/* Exact Matebiz Cursor Dot */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 -ml-1.5 -mt-1.5 h-3 w-3 rounded-full bg-gradient-to-br from-[#894fa6] to-[#2a245c] shadow-[0_0_10px_rgba(107,46,136,0.9)] will-change-transform transition-[transform,opacity] duration-150 ${
-          isHovered ? "scale-150 opacity-90" : "scale-100 opacity-100"
-        }`}
+        className="cursor-dot fixed pointer-events-none rounded-full bg-[#6b2e88] w-[8px] h-[8px] -translate-x-1/2 -translate-y-1/2 z-[99999] opacity-0 transition-opacity duration-150"
+        aria-hidden="true"
       />
-    </div>
+      {/* Exact Matebiz Cursor Outline */}
+      <div
+        ref={outlineRef}
+        className="cursor-outline fixed pointer-events-none rounded-full border-[1.5px] border-[#6b2e88] w-[32px] h-[32px] -translate-x-1/2 -translate-y-1/2 z-[99998] opacity-0 transition-[transform,opacity] duration-200 ease-out"
+        aria-hidden="true"
+      />
+    </>
   );
 }
