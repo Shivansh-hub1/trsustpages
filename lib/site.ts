@@ -523,33 +523,59 @@ export const LOCATIONS: LocationPage[] = [
     ],
   },
   {
-    slug: "faizabad",
+        slug: "faizabad",
     city: "Faizabad",
     region: "Uttar Pradesh",
     country: "India",
     kind: "local",
-    intro:
-      "We offer website design and local SEO for clinics, coaching centres, contractors and retailers in Faizabad.",
-    localProof: [
-      "Healthcare and education content compliance",
-      "Lead forms tuned for phone-first buyers",
-      "Local citation and directory cleanup",
-      "On-site photography guidance for local businesses",
+    heroTitle: "Web Designing & Development Company in",
+    metaTitle: "Web Designing Company in Faizabad | Web Development — Trustpages",
+    metaDesc:
+      "Top web designing company & website development agency in Faizabad. High-performance custom websites & local SEO built by Shivansh Vishwakarma. Call +91 83031 72373.",
+    keywords: [
+      "web designing company in faizabad",
+      "web development company in faizabad",
+      "website designing company in faizabad",
+      "website development company in faizabad",
+      "website maker in faizabad",
+      "web designer in faizabad",
+      "best web designing company in faizabad",
+      "best website developer in faizabad",
+      "web designing faizabad ayodhya",
+      "shivansh vishwakarma web developer",
     ],
-    focus: "Clinic, coaching and contractor websites with local SEO across Faizabad.",
-    landmark: "Faizabad city, Ayodhya district",
+    intro:
+      "Looking for the best web designing company or web development company in Faizabad? Trustpages builds lightning-fast, high-converting websites for clinics, coaching institutes, hotels, contractors, and retail businesses across Faizabad and the Ayodhya region — optimized for Google search rankings, Google Maps, and AI answer engines.",
+    localProof: [
+      "Top-rated web designing & web development company serving Faizabad & Ayodhya district",
+      "Led by Shivansh Vishwakarma — high-speed Next.js and React architecture",
+      "Healthcare, coaching institute, and retail business specialized lead engines",
+      "Local SEO & Google Business Profile (Maps) ranking integration",
+      "Direct WhatsApp enquiry integration and 100% full code & asset ownership",
+    ],
+    focus:
+      "Professional web designing company and custom web development in Faizabad for clinics, coaching centres, contractors, and local businesses.",
+    landmark: "Civil Lines, Chowk & Rekabganj corridor, Faizabad (Ayodhya District)",
     faqs: [
       {
-        q: "Do you work with clinics and coaching centres?",
-        a: "Yes. We build appointment-booking and admission-enquiry sites with the trust signals Indian patients and parents look for: credentials, results, location and reviews.",
+        q: "Which is the best web designing company in Faizabad?",
+        a: "Trustpages, founded by Shivansh Vishwakarma and based on Bikapur Main Road in Ayodhya district, is a premier web designing and development company serving Faizabad. We deliver custom Next.js websites that load in under 1.5 seconds and include on-page SEO and WhatsApp lead flows.",
+      },
+      {
+        q: "What does website development cost in Faizabad?",
+        a: "A 5-page custom business website from a top web development company in Faizabad starts at ₹24,999 with written scope, mobile responsiveness, fast hosting, and local SEO setup. eCommerce stores start from ₹59,999.",
+      },
+      {
+        q: "How can my Faizabad business rank #1 on Google for local searches?",
+        a: "Ranking #1 in Faizabad requires targeted on-page local keywords ('in Faizabad'), a verified Google Business Profile with positive reviews, fast mobile speed (under 2s), and clean local directory citations.",
+      },
+      {
+        q: "Do you build websites for Faizabad coaching institutes and healthcare clinics?",
+        a: "Yes. We build admission enquiry and appointment booking sites tailored for Faizabad students and patients, complete with WhatsApp click-to-chat, location maps, and credential showcases.",
       },
       {
         q: "How quickly can a Faizabad business get online?",
-        a: "A one-page site with Google Business Profile setup can be live in 5–7 working days; a full five-page site typically takes two to three weeks.",
-      },
-      {
-        q: "Do you provide website maintenance?",
-        a: "Yes, monthly care plans cover updates, backups, uptime monitoring and small content edits.",
+        a: "Standard business websites are delivered in 7 to 14 days with full staging previews and revision rounds. A one-page launch can be live in 5 working days.",
       },
     ],
   },

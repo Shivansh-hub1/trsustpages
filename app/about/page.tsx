@@ -116,6 +116,7 @@ export default function AboutPage() {
               <h2 className="h-card">At a glance</h2>
               <dl className="mt-4 space-y-3 text-[0.88rem]">
                 {[
+                  ["Founder", "Shivansh Vishwakarma"],
                   ["Base", "Bikapur, Ayodhya, Uttar Pradesh"],
                   ["Team", "Small, senior, hands-on"],
                   ["Languages", "English · Hindi"],
