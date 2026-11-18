@@ -6,6 +6,9 @@ import { JsonLd, Breadcrumbs, CTABand } from "@/components/ui";
 import { BLOG_POSTS, SITE } from "@/lib/site";
 import { breadcrumbSchema, graph, abs } from "@/lib/schema";
 
+
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
 }
@@ -17,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
-  if (!post) return {};
+  if (!post) notFound();
   const seoTitle =
     post.title.length > 52 ? `${post.title.slice(0, 49).trimEnd()}…` : post.title;
   return {

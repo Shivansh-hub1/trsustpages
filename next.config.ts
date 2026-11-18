@@ -11,8 +11,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
   poweredByHeader: false,
   compress: true,
   turbopack: {

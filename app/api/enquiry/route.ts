@@ -128,3 +128,15 @@ export async function POST(request: Request) {
 export async function GET() {
   return NextResponse.json({ ok: false, error: "method_not_allowed" }, { status: 405 });
 }
+
+export async function PUT() {
+  return NextResponse.json({ ok: false, error: "method_not_allowed" }, { status: 405 });
+}
+
+export async function DELETE() {
+  return NextResponse.json({ ok: false, error: "method_not_allowed" }, { status: 405 });
+}
+
+export async function PATCH() {
+  return NextResponse.json({ ok: false, error: "method_not_allowed" }, { status: 405 });
+}

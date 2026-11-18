@@ -7,6 +7,9 @@ import { PageHero, JsonLd, CheckList, CTABand, SectionHeading } from "@/componen
 import { LOCATIONS, SERVICES, SITE } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, graph, abs } from "@/lib/schema";
 
+
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return LOCATIONS.map((l) => ({ slug: l.slug }));
 }
@@ -18,7 +21,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const loc = LOCATIONS.find((l) => l.slug === slug);
-  if (!loc) return {};
+  if (!loc) notFound();
   const title = loc.metaTitle || `Web Design & SEO in ${loc.city}`;
   const description = (
     loc.metaDesc ||

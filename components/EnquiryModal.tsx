@@ -4,6 +4,22 @@ import { useEffect, useState, useRef, type FormEvent } from "react";
 import { Icon } from "./Icons";
 import { SITE } from "@/lib/site";
 
+function safeGetStorage(key: string): string | null {
+  try {
+    return typeof window !== "undefined" ? window.sessionStorage.getItem(key) : null;
+  } catch {
+    return null;
+  }
+}
+
+function safeSetStorage(key: string, value: string): void {
+  try {
+    if (typeof window !== "undefined") window.sessionStorage.setItem(key, value);
+  } catch {
+    // Gracefully ignore in restricted / incognito iframe environments
+  }
+}
+
 export default function EnquiryModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "fallback">("idle");
@@ -18,13 +34,13 @@ export default function EnquiryModal() {
 
   const closeModal = () => {
     setIsOpen(false);
-    sessionStorage.setItem("trustpages_enquiry_dismissed", "true");
+    safeSetStorage("trustpages_enquiry_dismissed", "true");
   };
 
   useEffect(() => {
     // 1. Auto-show once per session after 7 seconds if not dismissed
     const timer = setTimeout(() => {
-      if (sessionStorage.getItem("trustpages_enquiry_dismissed") !== "true") {
+      if (safeGetStorage("trustpages_enquiry_dismissed") !== "true") {
         setIsOpen(true);
       }
     }, 7000);

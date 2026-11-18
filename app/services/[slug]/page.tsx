@@ -7,6 +7,8 @@ import { PageHero, SectionHeading, JsonLd, CheckList, CTABand, Breadcrumbs } fro
 import { SERVICES, SITE, LOCATIONS } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, graph, serviceSchema, abs } from "@/lib/schema";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
@@ -18,7 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
-  if (!service) return {};
+  if (!service) notFound();
   const title = `${service.shortName} in Bikapur, Ayodhya`;
   const description = `${service.tagline}. ${service.name} from Trustpages in Bikapur, Ayodhya — from ${service.priceFrom}. Fixed scope, India & worldwide.`.slice(0, 158);
   return {
