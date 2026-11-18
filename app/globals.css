@@ -57,6 +57,11 @@
   from { opacity: 0; transform: translateY(22px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
 :root {
   --tp-grad: linear-gradient(135deg, #6b2e88 0%, #2a245c 100%);
@@ -152,6 +157,14 @@ p { text-wrap: pretty; }
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .grad-text-animated {
+    background: linear-gradient(135deg, #6b2e88 0%, #a855f7 35%, #2a245c 70%, #6b2e88 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textShimmer 7s ease infinite;
   }
 
   /* ---------- Surfaces ---------- */

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileContactBar from "@/components/MobileContactBar";
 import EnquiryModal from "@/components/EnquiryModal";
+import CustomCursor from "@/components/CustomCursor";
 import { SITE } from "@/lib/site";
 import { graph, organizationSchema, localBusinessSchema, websiteSchema } from "@/lib/schema";
 
@@ -156,6 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileContactBar />
         <EnquiryModal />
+        <CustomCursor />
         <script
           type="application/ld+json"
           suppressHydrationWarning

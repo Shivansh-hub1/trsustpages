@@ -5,6 +5,9 @@ import { HeroArtwork, HexBadges, OrbitDiagram, Scribble } from "@/components/Art
 import Faq from "@/components/Faq";
 import LeadForm from "@/components/LeadForm";
 import { SectionHeading, SplitCTA, StatStrip, CheckList, CTABand, JsonLd, Pill } from "@/components/ui";
+import AnimatedHeroText from "@/components/AnimatedHeroText";
+import TechStack from "@/components/TechStack";
+import ProjectGallery from "@/components/ProjectGallery";
 import {
   SITE, STATS, SERVICES, PROCESS, FAQS, DIFFERENTIATORS, BLOG_POSTS, LOCATIONS,
 } from "@/lib/site";
@@ -78,7 +81,7 @@ export default function HomePage() {
           <h1 className="display-hero mx-auto mt-6 max-w-4xl text-navy">
             Turn your website into a{" "}
             <span className="relative inline-block">
-              <span className="grad-text">growth engine</span>
+              <AnimatedHeroText />
               <Scribble className="absolute -bottom-3 left-0 h-3 w-full" />
             </span>{" "}
             people trust
@@ -179,6 +182,9 @@ export default function HomePage() {
           <StatStrip stats={STATS} />
         </div>
       </section>
+
+      {/* ==================== ENTERPRISE TECH STACK ==================== */}
+      <TechStack />
 
       {/* ==================== ORBIT DIAGRAM ==================== */}
       <section className="section bg-white">
@@ -378,44 +384,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Independent examples, not a portfolio of Trustpages client work. */}
-      <section className="section bg-mist/50">
-        <div className="shell">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow="Project inspiration" title="Ideas for a website that" highlight="works for your business" intro="Explore examples from independent agencies. These projects were not created by Trustpages." />
-            <Link href="/work" className="btn btn-outline">Explore the examples <Icon name="arrow" size={15} /></Link>
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {INSPIRATION.map((item, idx) => {
-              const screens = [
-                "/screenshots/project-arts.png",
-                "/screenshots/project-spa.png",
-                "/screenshots/project-organizer.png",
-              ];
-              return (
-                <article key={item.title} className="card flex flex-col overflow-hidden">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line bg-mist">
-                    <img
-                      src={screens[idx % screens.length]}
-                      alt={`${item.title} website screenshot`}
-                      width={600}
-                      height={375}
-                      className="h-full w-full object-cover object-top transition duration-300 hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-plum">{item.sector} · External example</p>
-                    <h3 className="h-card mt-2">{item.title}</h3>
-                    <p className="mt-1 text-sm font-medium text-plum">Project by {item.agency}</p>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-body">{item.summary}</p>
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-plum underline underline-offset-4">Original case study <Icon name="arrow" size={14} /><span className="sr-only"> (opens in a new tab)</span></a>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+            {/* ==================== MATEBIZ STYLE PROJECT GALLERY ==================== */}
+      <ProjectGallery />
 
       {/* ==================== DIFFERENTIATORS + FORM ==================== */}
       <section className="section bg-mist/60">
